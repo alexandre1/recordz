@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+  <!--  <img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&u=$u'">-->
+  <p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;action=register&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/dosearch.pl?lang=$LANG&amp;action=search&session=$SESSIONID&u=$u" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<input type="hidden" name="u" value="$u"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" style="border-radius: 12px;"/>&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<br/>
+	<div class="centre">
+		<fieldset>
+			<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=personal_data&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'personal_data'}</a><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myench
+			&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'my_enchere'}</a>&nbsp;<a href="/cgi-bin/add_other.pl?lang=$LANG&amp;page=add_other&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'vinyl_add_one'}</a>&nbsp;<a href="/cgi-bin/advertise.pl?lang=$LANG&amp;page=advertise&u=$u" class="menulink" class=&{ns4class};>$LABEL{'advertise'}</a>
+		</fieldset>
+		<br/>
+			<form id="update" action="/cgi-bin/update_personal_data.pl" method="post">			
+				<input type="hidden" name="lang" value="$LANG"/>
+				<input type="hidden" name="session" value="$SESSIONID"/>
+				<input type="hidden" name="action" value="update_personal_data"/>
+				<input type="hidden" name="register" value=""/>
+				<input type="hidden" name="u" value="$u"/>						
+				<table style="border-radius: 25px;border: 2px solid #6100C1;padding: 20px;\" width="555" border="0">
+					  <tr>
+						<td width="208"><label id="first_name_label">$LABEL{'first_name_label'}</label></td>
+						<td width="149"><input type="text" name="first_name" value="$VALUE{'first_name'}"/></td>
+						<td width="216">$ERROR{'all_label'}</td>
+					  </tr>
+					  <tr>
+						<td><label id="name_label">$LABEL{'name_label'}</label></td>
+						<td><input type="text" name="name" value="$VALUE{'name_per'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="country_label">$LABEL{'country_label'}</label></td>
+						<td> <select name="country_name"><option value="Suisse">Suisse</option><option value="France">France</option></select></td>
+						<td>&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td><label id="adress_label">$LABEL{'adress_label'}</label></td>
+						<td><input type="text" name="adress_name" value="$VALUE{'adress_name'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="city_label">$LABEL{'city_label'}</label></td>
+						<td><input type="text" name="city" value="$VALUE{'city'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="npa_label">$LABEL{'npa_label'}</label></td>
+						<td><input type="text" name="npa" value="$VALUE{'npa'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="phone_number_label">$LABEL{'phone_number_label'}</label></td>
+						<td><input type="text" name="phone_number" value="$VALUE{'phone_number'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="email_label">$LABEL{'email_label'}</label> </td>
+						<td><input type="text" name="email" value="$VALUE{'email'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="iban_label">$LABEL{'iban_label'}</label> </td>
+						<td><input type="text" name="iban" value="$VALUE{'iban'}" style="width:250px"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="iban_label">$LABEL{'paypal_me_label'}</label> </td>
+						<td><input type="text" name="paypal" value="$VALUE{'paypal'}" style="width:250px"/></td>
+						<td></td>
+					  </tr>
+
+					 <!--- <tr>
+						<td><label id="email_label">$LABEL{'date_expiration'}</label> </td>
+						<td><input type="text" name="email" value="$VALUE{'date_expiration'}"/></td>
+						<td></td>
+					  </tr>
+
+					  <tr>
+						<td></td>
+						<td><input type="button" value="Prolonger" onclick="window.open('/cgi-bin/recordz.cgi?lang=$LANG&amp;page=longer&amp;session=$SESSIONID&u=$u;','MySearchWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=490,height=200,left=0,top=0')"></td>
+						<td></td>
+					  </tr>
+					    !-->
+					  <tr>
+						<td><label id="password_label">$LABEL{'login_password_label'}</label></td>
+						<td><input type="text" name="user_password" value="$ARTICLE{'user_password'}"/></td>
+						<td></td>
+					  </tr>
+				</table>
+
+		        <input type="submit" value="Send" onClick="this.document.insert_form.submit();"/>
+			    <input type="reset" value="Reset"/>
+			</form>
+		
+	</div>
+ </div>
+</body>
+</html>

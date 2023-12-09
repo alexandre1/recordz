@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>DJ Market Place- New User/title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+  .button {border-radius: 12px;}
+</style>
+
+</head>
+
+<body>
+ <div align="center">
+      <p><a href="/cgi-bin/recordz.cgi?lang=$LANG;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?action=viewbasket&amp;lang=$LANG;"class="menulink" class=&{ns4class}; >$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="" class="menulink" class=&{ns4class};>$LABEL{'matos'}</a>&nbsp;&nbsp;<a href="" class="menulink" class=&{ns4class};>$LABEL{'wear'}</a></p>
+   <p>&nbsp;</p>
+   <div id="search_box" style="">
+	<p>&nbsp;</p>
+   	</div>
+	<div id="register">
+	<fieldset>
+		<legend>Data</legend>
+			<form name="insert_form" action="/cgi-bin/recordz.cgi" method="post">			
+				<input type="hidden" name="lang" value="$LANG">
+				<input type="hidden" name="action" value="register">
+				<label id="first_name_label">$LABEL{'first_name_label'}</label><input type="text" name="first_name" value=""><br />
+				<label id="name_label">$LABEL{'name_label'}</label> <input type="text" name="user_name" value=""><br />
+				<label id="country_label">$LABEL{'country_label'}</label> <select name="country_name"><option>Suisse</option><option>France</option></select><br />
+				<label id="adress_label">$LABEL{'adress_label'}</label> <input type="text" name="adress_name" value=""><br />
+				<label id="city_label">$LABEL{'city_label'}</label><input type="text" name="city" value=""><br />
+				<label id="npa_label">$LABEL{'npa_label'}</label> <input type="text" name="npa" value=""><br />
+				<label id="phone_number_label">$LABEL{'phone_number_label'}</label> <input type="text" name="phone_number" value=""><br />
+				<label id="email_label">$LABEL{'email_label'}</label> <input type="text" name="email" value=""><br />
+				<label id="password_label">$LABEL{'login_password_label'}</label><p>
+			    <input type="password" name="user_password" value=""><br />
+		        <input type="submit" value="Send">
+			    <input type="reset" value="Reset">
+			</form>
+	</fieldset>		
+	</div>
+ </div>
+</body>
+</html>

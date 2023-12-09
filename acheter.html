@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <style>
+      .button {border-radius: 12px;}
+    </style>
+
+</head>
+<body>
+    <form action="/cgi-bin/recordz.cgi?lang=$LANG&action=acheter" method="post">
+        <input type="hidden" name="article" value="$ARTICLE{'id_article'}"></input>
+        <input type="hidden" name="lang" value="$LANG"></input>
+        <input type="hidden" name="action" value="acheter"></input>
+        <input type="hidden" name="mode_livraison_ref" value="$ARTICLE{'ref_mode_livraison'}"></input>
+        <input type="hidden" name="mode_payement_ref" value="$ARTICLE{'ref_mode_payement'}"></input>        
+        <table>
+            <tr>
+                <td><label>$LABEL{'price'}</label></td><td><input type="text" name="price" disabled value="$ARTICLE{'price'}"></input></td>
+            </tr>
+            <tr>
+                <td><label>$LABEL{'quantity_wanted'}</label></td><td><input type="text" name="quantity_wanted" value=""></input></td>
+            </tr>
+            <tr>
+                <td><label>$LABEL{'mode_de_livraison'}</label></td><td><input type="text" name="mode_de_livraison" value="$ARTICLE{'mode_de_livraison'}"></input></td>
+            </tr>
+                <tr>
+                <td><label>$LABEL{'condition_de_payement'}</label></td><td><input type="text" name="condition_de_payement" value="$ARTICLE{'condition_de_payement'}"></input></td>
+            </tr>            
+            <tr>
+                <td><label>$LABEL{'username_label'}</label></td><td><input type="text" name="username" value=""></input></td>
+            </tr>            
+            <tr>
+                <td><label>$LABEL{'password'}</label></td><td><input type="password" name="password" value=""></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Acheter"></input></td>$ARTICLE{'buy_waiting_counter'}</td><td><input type="button" onClick="window.close();" value="Fermer"></td>
+            </tr>
+        </table>
+    </form>        
+</body>
+</html>
+

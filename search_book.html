@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.category;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+   			box_category = document.forms.select_wish.category;
+			var price_min_value;
+			var price_max_value;
+			var title_value;
+			var author_value;
+			var year_value;
+			var editor_value;
+			if (box_category) {
+				category_value = box_category.options[box_category.selectedIndex].value;
+				url = url + '&category=' + category_value;			
+			}
+			if (document.select_wish.title) {
+				title_value = document.select_wish.title.value;
+				url = url + '&title=' + title_value;
+			}
+			if (document.select_wish.author) {
+				author_value = document.select_wish.author.value;
+				url = url + '&author=' + author_value;
+			}
+			if (document.select_wish.year) {
+				year_value = document.select_wish.year.value;
+				url = url + '&year=' + year_value;
+			}
+			if (document.select_wish.editor) {
+				editor_value = document.select_wish.editor.value;
+				url = url + '&editor=' + editor_value;
+			}
+			if (document.select_wish.price_min) {
+				price_min_value = document.select_wish.price_min.value;
+				url = url + '&price_min=' + price_min_value;
+			}
+			if (document.select_wish.price_max) {
+				price_max_value = document.select_wish.price_max.value;
+				url = url + '&price_max=' + price_max_value;
+			}
+			if (document.select_wish.used) {
+				used_box = document.select_wish.used;
+				used_value = used_box.options[used_box.selectedIndex].value;
+				url = url + '&used=' + used_value;								
+			}
+			
+		if (category_value != '') {
+			opener.location.href = url;
+		} else {
+			alert ('Et la catégorie c est pour qui');
+		}
+
+	}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dosearchimmo">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+	    <td>$LABEL{'category'}</td><td>$SELECT{'category'}</td>
+	</tr>
+		$ARTICLE{'book_properties'}
+		$ARTICLE{'used'}
+	</table>
+	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=dosearchbook',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

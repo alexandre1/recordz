@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+		function go()
+		{
+			
+			box = document.select_wish.country;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go2()
+		{
+			
+			box = document.select_wish.mode;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		function go3()
+		{
+			
+			box = document.select_wish.canton;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go4()
+		{
+			
+			box = document.select_wish.immo_type;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		function go5()
+		{
+			
+			box = document.select_wish.departement;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+	</script>
+
+</head>
+<body>
+	<form name="select_wish">
+	<table>
+
+	<tr>
+		<td>Pays : <select name="country" onchange="go();"><option selected value="Suisse">Suisse</option><option value="">--------</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse">Suisse</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=France">France</option></select></td>
+		<td>Canton:<select name="canton" onchange="go3();"><option selected value="Appenzell Rhodes-Extérieures - (AR)">Appenzell Rhodes-Extérieures - (AR)</option><option value="">--------</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Appenzell Rhodes-Extérieures - (AR)&country=Suisse&immo_type=villa&departement=&location_type=Location">Appenzell Rhodes-Extérieures - (AR)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Appenzell Rhodes-Intérieures - (AI)&country=Suisse&immo_type=villa&departement=&location_type=Location">Appenzell Rhodes-Intérieures - (AI)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Argovie - (AG)&country=Suisse&immo_type=villa&departement=&location_type=Location">Argovie - (AG)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Berne - (BE)&country=Suisse&immo_type=villa&departement=&location_type=Location">Berne - (BE)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Bâle-Campagne - (BL)&country=Suisse&immo_type=villa&departement=&location_type=Location">Bâle-Campagne - (BL)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Bâle-Ville - (BS)&country=Suisse&immo_type=villa&departement=&location_type=Location">Bâle-Ville - (BS)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Fribourg - (FR)&country=Suisse&immo_type=villa&departement=&location_type=Location">Fribourg - (FR)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Genève - (GE)&country=Suisse&immo_type=villa&departement=&location_type=Location">Genève - (GE)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Glaris - (GL)&country=Suisse&immo_type=villa&departement=&location_type=Location">Glaris - (GL)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Grisons - (GR)&country=Suisse&immo_type=villa&departement=&location_type=Location">Grisons - (GR)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Jura - (JU)&country=Suisse&immo_type=villa&departement=&location_type=Location">Jura - (JU)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Lucerne - (LU)&country=Suisse&immo_type=villa&departement=&location_type=Location">Lucerne - (LU)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Neuchâtel - (NE)&country=Suisse&immo_type=villa&departement=&location_type=Location">Neuchâtel - (NE)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=
+Nidwald - (NW)&country=Suisse&immo_type=villa&departement=&location_type=Location">
+
+Nidwald - (NW)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Obwald - (OW)&country=Suisse&immo_type=villa&departement=&location_type=Location">Obwald - (OW)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Schaffhouse - (SH)&country=Suisse&immo_type=villa&departement=&location_type=Location">Schaffhouse - (SH)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Schwyz - (SZ)&country=Suisse&immo_type=villa&departement=&location_type=Location">Schwyz - (SZ)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Soleure - (SO)&country=Suisse&immo_type=villa&departement=&location_type=Location">Soleure - (SO)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=St-Gall - (SG)&country=Suisse&immo_type=villa&departement=&location_type=Location">St-Gall - (SG)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Tessin - (TI)&country=Suisse&immo_type=villa&departement=&location_type=Location">Tessin - (TI)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Thurgovie - (TG)&country=Suisse&immo_type=villa&departement=&location_type=Location">Thurgovie - (TG)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Uri - (UR)&country=Suisse&immo_type=villa&departement=&location_type=Location">Uri - (UR)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Valais - (VS)&country=Suisse&immo_type=villa&departement=&location_type=Location">Valais - (VS)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Vaud - (VD)&country=Suisse&immo_type=villa&departement=&location_type=Location">Vaud - (VD)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Zoug - (ZG)&country=Suisse&immo_type=villa&departement=&location_type=Location">Zoug - (ZG)</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&canton=Zurich - (ZH)&country=Suisse&immo_type=villa&departement=&location_type=Location">Zurich - (ZH)</option></select></td>
+		<td>Type de bien <select name="immo_type" onchange="go4();"><option selected value="villa">villa</option><option value="">--------</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=appartement">appartement</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=villa">villa</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=terrain à bâtir">terrain à bâtir</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=ferme">ferme</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=loft">loft</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=local commercial">local commercial</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=parking / garage">parking / garage</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&location_type=Location&immo_type=chalet">chalet</option></select></td>		
+		<td>Mode: <select name="mode" onchange="go2();"><option selected value="Location">Location</option><option value="">--------</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&location_type=Achat&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&immo_type=villa">Achat</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&location_type=Location&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&immo_type=villa">Location</option><option VALUE="/cgi-bin/recordz.cgi?lang=fr&page=search_immo&session=0e1250b1d26c819d6ba5049fc9c98323&location_type=Vaccances&country=Suisse&canton=Appenzell Rhodes-Extérieures - (AR)&departement=&immo_type=villa">Vaccances</option></select></td>		
+	</tr>
+
+		<td>Location prix min.<input type="text" name=""></td><td>Location prix max.<input type="text" name=""></td>		
+	</tr>
+	<tr>
+	<td>Non<input type="checkbox" name="yes" value="Non"></td>
+	</tr>
+	</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+	var skipcycle = false
+
+	function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+	function Lvl_P2P(url,closeIt,delay){ //ver1.0 4LevelWebs
+    	opener.location.href = url;
+	}
+
+</script>
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=addcomment&session=$SESSIONID" method="post">
+<input type="hidden" name="lang" value="$LANG">
+<input type="hidden" name="action" value="addcomment">
+<input type="hidden" name="article" value="$ARTICLE{'id_article'}">
+<input type="hidden" name="session" value="$SESSIONID">
+
+<br/><br/><br/>
+<table>
+<tr>
+	<td>Donnez une note au produit</td><td><select name="note_product"><option value="10">10</option><option value="9">9</option><option value="8">8</option><option value="7">7</option><option value="6">6</option><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select></td>
+</tr>
+</table>
+<input type="submit" name="send" value="Envoyer">
+</form>
+</body>
+</html>

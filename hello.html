@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="$LABEL{'index_title'}" />
+
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/jd.gallery.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jQueryui/1.8.16/themes/base/jQuery-ui.css">
+
+<!-- source = http://code.google.com/apis/libraries/devguide.html#jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jQuery/1.6.4/jQuery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jQueryui/1.8.16/jQuery-ui.min.js"></script>
+<style>
+  .button {border-radius: 12px;}
+</style>
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  color: #ADD8E6:
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}</style>
+<script src="../scripts/jd.gallery.js" type="text/javascript"></script> 
+<script language="javascript">
+    function getCookieVal(offset) {
+	var endstr=document.cookie.indexOf (";", offset);
+	if (endstr==-1)
+      		endstr=document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+	}
+function GetCookie (name) {
+	var arg=name+"=";
+	var alen=arg.length;
+	var clen=document.cookie.length;
+	var i=0;
+	while (i<clen) {
+		var j=i+alen;
+		if (document.cookie.substring(i, j)==arg)
+                        return getCookieVal (j);
+                i=document.cookie.indexOf(" ",i)+1;
+                        if (i==0) break;}
+	return null;
+	}
+function SetCookie (name, value) {
+// un cookie a besoin d'un nom, d'une valeur, d'un nom de domaine, d'une date d'expiration
+// 
+	var argv=SetCookie.arguments;
+	var argc=SetCookie.arguments.length;
+	var expires=(argc > 2) ? argv[2] : null;
+	var path=(argc > 3) ? argv[3] : null;
+	var domain=(argc > 4) ? argv[4] : null;
+	var secure=(argc > 5) ? argv[5] : false;
+	document.cookie=name+"="+escape(value)+
+		((expires==null) ? "" : ("; expires="+expires.toGMTString()))+
+		((path==null) ? "" : ("; path="+path))+
+		((domain==null) ? "" : ("; domain="+domain))+
+		((secure==true) ? "; secure" : "");
+	}
+
+
+    
+    function DeleteCookie (name) {
+	var exp=new Date();
+	exp.setTime (exp.getTime() - 100000);
+	var cval=GetCookie (name);
+	document.cookie=name+"="+cval+"; expires="+exp.toGMTString();
+	}
+</script>
+
+<script>
+   $(function(get_states) {
+    $('#abbrev').val("");
+    $("#state").autocomplete({
+    source: "http://avant-garde.no-ip.biz/cgi-bin/fabricant.pl";
+    minLength: 3,
+    select: function(event, ui) {
+     $('#state_id').val(ui.item.id);
+     $('#abbrev').val(ui.item.abbrev);
+    }
+    });
+   });
+
+   function openFormImageOpen() {
+	    document.getElementById("myFormInsertComment").style.display = "block";
+    }
+
+    function closeFormImage() {
+	    document.getElementById("myFormInsertComment").style.display = "none";
+    }
+</script>
+
+</head>
+<body onload = "startTimer()"><div class="header2"></div><div class="header"></div>
+<!--<img id="img" src="images/blank.gif" width="85px" height="79px"><div id="imageName"></div>-->
+
+<div class="conteneur">
+<br />
+    <!--<img src="../images/fr.gif" height="13px" width="19px" alt="french" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&amp;session=$SESSIONID&page=main'"/>&nbsp;<!--<img src="../images/en.png" height="15px" width="19px" alt="english" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&amp;session=$SESSIONID&page=main'"/>&nbsp;<img src="../images/de.gif" height="13px" width="19px" alt="german" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&amp;session=$SESSIONID&page=main'"/>&nbsp;<img src="../images/it.gif" alt="italian" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&amp;session=$SESSIONID&page=main'"/>-->
+    <p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/search.pl?lang=$LANG&amp;action=search&amp;session=$SESSIONID" method="get">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<input type="hidden" name="u" value="$u"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px" alt="search"/>&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" style="border-radius: 12px;"/>&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		
+    <input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>		  
+      <a href="/cgi-bin/main.pllang=$LANG&amp;session=$SESSIONID&amp;saw=onlyench&u=$u&page=main;" class="menulink">$LABEL{'only_enchere'}</a><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&amp;saw=lasthour&u=$u&page=main" class="menulink" >$LABEL{'last_hour'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&amp;saw=onlynew&u=$u&page=main" class="menulink" >$LABEL{'only_shop'}</a>
+		<tr>
+		    
+		    <td><div class="centre">
+		    
+			   <form id="select_wish" action="">
+	      		    <br/>
+        			 <div  class="pagination">$ARTICLE{'best_offers_index'}</div>				
+				  $ARTICLE{'best_offers_table'}<br />
+	    		    <div class="pagination">$ARTICLE{'best_offers_index'}</div>
+  </div>
+   			   </form>
+		 </div></td>
+		 </tr>
+
+	</div>
+	<div class="form-popup" id="myFormInsertComment">
+		<form class="form-container" name="myFormHistorique">
+		 <input type="hidden" name="article" value="$ARTICLE{'id_article'}"></input>
+		 <input type="hidden" name="lang" value="$LANG"></input>	
+		 <input type="hidden" name="show_popup" value="true"/>
+		<img src="$ARTCLE{'image_pub'}</img>
+		 <input type="button" onclick="openFormHistorique();closeFormHistorique();" value="Fermer"></input>		
+	 </form>
+ </div>
+ 
+</body>
+</html>

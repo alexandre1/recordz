@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+ 	   	var note = document.select_wish.note.value;		
+ 	   	url = url + 'lang=$LANG&article=$ARTICLE{'id_article'}&id_a_livre=$ARTICLE{'id_a_livre'}&u=$u&note=' + note;
+                opener.location.href = url;
+            }
+	</script>
+
+
+</head>
+<div class="conteneur">
+    <form method="post" action="/cgi-bin/success_deliver.pl" name="select_wish">
+    <input type="hidden" name="lang" value="$LANG"/>
+    <input type="hidden" name="action" value="article_received"/>
+    <input type="hidden" name="article" value="$ARTICLE{'id_article'}"/>
+    <input type="hidden" name="id_a_livre" value="$ARTICLE{'id_a_livre'}"/>
+    <input type="hidden" name="u" value="$u"/>
+    <label>$LABEL{'deliver_rapidity'}</label>&nbsp;&nbsp;<select name="note"><option>10</option><option>9</option><option>8</option><option>7</option><option>6</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+    <br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/success_deliver.pl?lang=$LANG&session=$SESSIONID&action=doupdatestatutarticleispayed&id_a_paye=$ARTICLE{'id_a_paye'}',true,0500)" value="Mise à jour">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+    </form>
+</body>
+</html>

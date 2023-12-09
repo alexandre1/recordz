@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>												<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+
+
+ 	   function Lvl_P2P(url,closeIt,delay){ //ver1.0 4LevelWebs
+
+			url = url + '&article=' + $ARTICLE; 
+			opener.location.href = url;
+	}
+	</script>
+
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dodeleteitem">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<input type="hidden" name="article" value="$ARTICLE"/>
+	<table>
+	<tr>
+	<td>Etes-vous certain de vouloir supprimer cet élément ?</td>
+	</tr>
+	</table>
+	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=dodeleteitem',true,0500)" value="Supprimer">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

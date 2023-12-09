@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.category;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go2()
+		{
+			
+			box = document.select_wish.subcategory;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go3()
+		{
+			
+			box = document.select_wish.fabricant;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){ //ver1.0 4LevelWebs
+	   		if (document.select_wish.category) {
+				category_box = document.select_wish.category;
+				category_value = category_box.options[category_box.selectedIndex].value;
+		                url = url + '&category=' + category_value; 
+			}
+			if (document.select_wish.subcategory) {
+				subcategory_box = document.select_wish.subcategory;
+				subcategory_value = subcategory_box.options[subcategory_box.selectedIndex].value;
+			        url = url + '&subcategory=' + subcategory_value; 
+			}
+			if (document.select_wish.fabricant) {
+				fabricant_box = document.select_wish.fabricant;
+				fabricant_value = fabricant_box.options[fabricant_box.selectedIndex].value;
+				url = url + '&fabricant=' + fabricant_value;
+			}
+			if (document.select_wish.price_min) {
+				price_min_value = document.select_wish.price_min.value;
+				url = url + '&price_min=' + price_min_value;				
+			}
+			if (document.select_wish.price_max) {
+				price_max_value = document.select_wish.price_max.value;
+				url = url + '&price_min=' + price_min_value;				
+			}
+			if (document.select_wish.used) {
+				used_box = document.select_wish.used;
+				used_value = used_box.options[used_box.selectedIndex].value;
+				url = url + '&used=' + used_value;								
+			}
+
+	   		if (category_value != '') {
+			opener.location.href = url;
+			}else {
+				alert ('Sélectionnez la catégorie');
+			}
+	}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dosearchwatch">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+		$SELECT{'categories'} $SELECT{'subcategories'}  $SELECT{'fabricants'}
+	</tr>	
+	<tr>
+		<td>$LABEL{'price_min'}</td><td><input type="text" name="price_min"></input></td>
+		<td>$LABEL{'price_max'}</td><td><input type="text" name="price_max"></input></td>
+			$ARTICLE{'used'}
+	</tr>
+	</tr>
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&action=dosearchwatch',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

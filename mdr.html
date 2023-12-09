@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+	function go()
+	{
+		
+		box = document.select_wish.navi;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+	function ench () {
+		montant = document.select_wish.encherepriceprice.value;
+		location.href = '/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;action=enchere&amp;article=55&amp;encherepriceprice=' + montant;
+	}
+
+   function Lvl_P2P(url,closeIt,delay){
+	    if (document.select_wish.quantity_wanted) {
+			quantity_value = document.select_wish.quantity_wanted.value;
+		   alert (quantity_value);
+		    location.href = url + '&amp;quantity=' + quantity_value + '&amp;article=55';
+			opener.location.href = url;
+		}
+	}
+
+</script>
+
+</head>
+<body><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+    <img src="../images/uk.gif" alt="" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&amp;session=b08798c2597a161b94bb8805aaa29dbb'"/>&nbsp;<img alt="" src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&amp;session=b08798c2597a161b94bb8805aaa29dbb'"/>&nbsp;<img alt="" src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&amp;session=b08798c2597a161b94bb8805aaa29dbb'"/>&nbsp;<img alt="" src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&amp;session=b08798c2597a161b94bb8805aaa29dbb'"/>
+
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb;" class="menulink">Home
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=myaccount&amp;session=b08798c2597a161b94bb8805aaa29dbb;" class="menulink">Mon Compte
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=login&amp;session=b08798c2597a161b94bb8805aaa29dbb;" class="menulink">Login
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=register&amp;session=b08798c2597a161b94bb8805aaa29dbb;" class="menulink">Nouvel utilisateur
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=about&amp;session=b08798c2597a161b94bb8805aaa29dbb;" class="menulink">A propos
+</a></p>
+    <div id="search_box">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=fr&amp;action=search&amp;session=b08798c2597a161b94bb8805aaa29dbb" method="post">
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="fr" />
+			<input type="hidden" name="session" value="b08798c2597a161b94bb8805aaa29dbb"/>
+
+			<img alt="" src="../images/atb_search.gif"/>&nbsp;<label id="search_name_label">Nom
+</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories"><option>Toutes les catégories
+</option><option>automobile</option><option>bateau</option><option>cd</option><option>cigares</option><option>consoles</option><option>diététique</option><option>dvd</option><option>habits femme</option><option>habits homme</option><option>hockey</option><option>immobilier</option><option>informatique</option><option>jeux</option><option>livres</option><option>mix tape</option><option>montres et bijoux femme</option><option>montres et bijoux homme</option><option>natel</option><option>parfums / cosmétiques</option><option>produits naturels</option><option>skate</option><option>snowboard</option><option>tennis</option><option>tv / vidéo</option><option>vins</option><option>vinyl</option></select>
+
+			<input type="submit" value="Search" />
+		</form>	
+	</div>
+	<div id="list-menu">
+		<ul style="float:left;">
+			<li><img alt="" src="../images/bar2.gif"/><img alt="" src="../images/bar2.gif"/><img alt="" src="../images/bar2.gif"/></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=auto&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Automobile
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=immo&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Immobilier
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Fashion
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=cigares&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Cigares</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=watch&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Montres et bijoux
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wine&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Vins
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=boat&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Bateau
+
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=tv_video&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Tv / vidéo / photos
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=informatique&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=;" class="menulink" >Informatique
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=games&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=;" class="menulink" >Jeux / Consoles
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=cd_vinyl_mixtap&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >CD / Music 
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=book&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Livres
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=dvd&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >DVD / Films
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=sport&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;country_swiss=&amp;country_france=&amp;with_lang_french=&amp;with_lang_italian=&amp;with_lang_german=&amp;with_lang_english=" class="menulink" >Sport
+</a></li><li><img alt="" src="../images/bar2.gif"/><img alt="" src="../images/bar2.gif"/><img alt="" src="../images/bar2.gif"/></li>
+		</ul>
+	</div>
+	<div class="centre">
+	<img src="../images/detail_fr.gif" alt="" width="300px" height="60px"/><img alt="" src="../upload/thumb.55.jpg" width="50px" height="37px" border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;action=show_image&amp;image=55','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')"/>&nbsp;
+		<form name="select_wish" action="/cgi-bin/recordz.cgi">
+
+		<input type="hidden" name="id_article" value="55"/>
+		<input type="hidden" name="lang" value="fr" />
+		<input type="hidden" name="action" value="add_other" />
+		<input type="hidden" name="session" value="b08798c2597a161b94bb8805aaa29dbb"/>	
+			<table>
+			  <tr>			  
+				<td><label id="label_category_name">Catégorie
+</label></td>			
+				<td><input type="text" name="category" value="dvd"/></td>
+				<td width="200"><label id="label_viewnbr_name">Nbr vues
+ </label></td>			
+				<td><label id="label_counter_name"><input type="text" value="271"/></td>			
+			  </tr>
+
+  			  <tr>
+				<td><label id="label_price">Vendeur
+</label></td>
+				<td><a href="/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;page=profil_vendeur&amp;username=alexandre" class="menulink">alexandre</a><img alt="" src="../images/anime_star.gif"/></td>
+									
+			  </tr>
+			  <tr>
+				<td><label id="label_article_name">Nom
+</label></td>
+				<td><input type="text" name="name" value="Pirates of Silicon Valley (1999)"/></td>
+
+					
+			  </tr>
+  			    
+			    <tr><td align="left">Quantité
+</td><td align="left"><input type="text" name="quantity" value="1"></td></tr>
+				
+ 			    <tr><td>Acteurs principaux
+</td><td><input type="text" name="actor" value="Anthony Michael Hall, Noah Wyle,"></td></tr><tr><td>Réalisateur
+</td><td><input type="text" name="realisator" value="Martyn Burke"></td></tr><tr><td>Année
+</td><td><input type="text" name="year" value=""></td></tr><tr><td>Durée
+</td><td><input type="text" name="duration" value="1h30"></td></tr><tr><td>Genre
+</td><td><input type="text" name="genre" value="Documentaire"></td></tr>
+				
+				
+			  <tr>
+				  <td></td>
+				  <td></td>
+
+				<td width="200" ><label id="label_end_enchere_name">Fin de l'annonce
+</label></td>			
+				<td><input type="text" name="end_enchere" value="2005-09-30 01:54:33"/></td>			
+			  </tr>
+			  <tr>
+				<td><label id="label_price">Prix
+</label></td>
+				<td><input type="text" name="price" value="5"/></td>
+				<td width="200px"><label>Temps restant
+</label></td>
+				<td><input type="text" name="price" value="-8 J -5 H -29 M -24 Sec"/></td>								
+			  </tr>
+
+			  <tr>
+			
+			 <td></td>
+			 </tr>
+				
+				
+			    
+				<tr><td align="left">Quantité voulue
+</td><td align="left"><input type="text" name="quantity_wanted"></td></tr>
+			</table>
+				<a href="#" onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb&action=addtobasket&article=55',true,0500)" class="menulink" >Payement direct
+</a>&nbsp;<br /><a href="callto://alexandre4968"><img alt="" src="http://goodies.skype.com/graphics/skypeme_btn_small_green.gif" border="0"></a><a href="msnim:chat?contact=alexjaquet@msn.com"><img alt="" src="../images/msn.jpg" border="0"></a>(need IE)<br/>
+
+			<table style="background-color:#CCCCFF ">
+
+					<p><!--StartFragment --><font color="#00ccff"><strong> </strong></font></p>
+<p><font color="#00ccff"><strong>es Pirates de la Silicon Valley est un t&eacute;l&eacute;film am&eacute;ricain de </strong></font><a class="new" title="Martyn Burke" href="http://fr.wikipedia.com/w/index.php?title=Martyn_Burke&amp;action=edit"><font color="#00ccff"><strong>Martyn Burke</strong></font></a><font color="#00ccff"><strong> r&eacute;alis&eacute; en </strong></font><a title="1999" href="http://www.manucorp.com/encyclopedie/1999"><font color="#00ccff"><strong>1999</strong></font></a><font color="#00ccff"><strong> et distribu&eacute; sur le r&eacute;seau </strong></font><a title="Turner Network Television" href="http://www.manucorp.com/encyclopedie/Turner_Network_Television"><font color="#00ccff"><strong>Turner Network Television</strong></font></a><font color="#00ccff"><strong> </strong></font><a class="external free" title="http://www.amazon.com/exec/obidos/tg/detail/-/0780627717/002-1482294-7852032?v=glance" href="http://www.amazon.com/exec/obidos/tg/detail/-/0780627717/002-1482294-7852032?v=glance" rel="nofollow"><font color="#00ccff"><strong>http://www.amazon.com/exec/obidos/tg/detail/-/0780627717/002-1482294-7852032?v=glance</strong></font></a><font color="#00ccff"><strong>.</strong></font></p>
+
+<p>
+<table id="toc" class="toc">
+    <tbody>
+        <tr>
+            <td>
+            <div id="toctitle">
+            <h2><font color="#00ccff">Sommaire</font></h2>
+            </div>
+            <ul>
+
+                <li class="toclevel-1"><a href="http://www.manucorp.com/encyclopedie/Les_Pirates_de_la_Silicon_Valley#Synopsis"><font color="#00ccff"><strong><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></strong></font></a></li>
+                <li class="toclevel-1"><a href="http://www.manucorp.com/encyclopedie/Les_Pirates_de_la_Silicon_Valley#Fiche_technique"><font color="#00ccff"><strong><span class="tocnumber">2</span> <span class="toctext">Fiche technique</span></strong></font></a></li>
+                <li class="toclevel-1"><a href="http://www.manucorp.com/encyclopedie/Les_Pirates_de_la_Silicon_Valley#Distribution"><font color="#00ccff"><strong><span class="tocnumber">3</span> <span class="toctext">Distribution</span></strong></font></a></li>
+                <li class="toclevel-1"><a href="http://www.manucorp.com/encyclopedie/Les_Pirates_de_la_Silicon_Valley#Commentaires"><font color="#00ccff"><strong><span class="tocnumber">4</span> <span class="toctext">Commentaires</span></strong></font></a></li>
+
+            </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><font color="#00ccff">
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "afficher"; var tocHideText = "masquer"; showTocToggle(); }
+//]]>
+</script>
+<strong></strong></font></p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px"><font color="#00ccff"><strong>[</strong></font><a title="Les Pirates de la Silicon Valley" href="http://fr.wikipedia.com/w/index.php?title=Les_Pirates_de_la_Silicon_Valley&amp;action=edit&amp;section=1"><font color="#00ccff"><strong>modifier</strong></font></a><font color="#00ccff"><strong>]</strong></font></div>
+
+<p><a id="Synopsis" name="Synopsis"><font color="#00ccff"><strong></strong></font></a></p>
+<h2><font color="#00ccff">Synopsis</font></h2>
+<p><font color="#00ccff"><strong><i>Les Pirates de la Silicon Valley</i> relate les d&eacute;buts de l'</strong></font><a title="Informatique" href="http://www.manucorp.com/encyclopedie/Informatique"><font color="#00ccff"><strong>informatique</strong></font></a><font color="#00ccff"><strong> individuelle et met en sc&egrave;ne la rivalit&eacute; entre </strong></font><a title="Steve Jobs" href="http://www.manucorp.com/encyclopedie/Steve_Jobs"><font color="#00ccff"><strong>Steve Jobs</strong></font></a><font color="#00ccff"><strong>, PDG d'</strong></font><a title="Apple Computer" href="http://www.manucorp.com/encyclopedie/Apple_Computer"><font color="#00ccff"><strong>Apple Computer</strong></font></a><font color="#00ccff"><strong>, qui vient de lancer le </strong></font><a title="Macintosh" href="http://www.manucorp.com/encyclopedie/Macintosh"><font color="#00ccff"><strong>Macintosh</strong></font></a><font color="#00ccff"><strong>, largement bas&eacute; sur les recherches du <i>Palo Alto Researsh Center</i> de </strong></font><a title="Xerox" href="http://www.manucorp.com/encyclopedie/Xerox"><font color="#00ccff"><strong>Xerox</strong></font></a><font color="#00ccff"><strong> et </strong></font><a title="Bill Gates" href="http://www.manucorp.com/encyclopedie/Bill_Gates"><font color="#00ccff"><strong>Bill Gates</strong></font></a><font color="#00ccff"><strong>, cr&eacute;ateur de la soci&eacute;t&eacute; </strong></font><a title="Microsoft" href="http://www.manucorp.com/encyclopedie/Microsoft"><font color="#00ccff"><strong>Microsoft</strong></font></a><font color="#00ccff"><strong>, diffuseur de </strong></font><a title="MS-DOS" href="http://www.manucorp.com/encyclopedie/MS-DOS"><font color="#00ccff"><strong>MS-DOS</strong></font></a><font color="#00ccff"><strong>, de logiciels de </strong></font><a title="Bureautique" href="http://www.manucorp.com/encyclopedie/Bureautique"><font color="#00ccff"><strong>bureautique</strong></font></a><font color="#00ccff"><strong>, comme </strong></font><a class="new" title="Multiplan" href="http://fr.wikipedia.com/w/index.php?title=Multiplan&amp;action=edit"><font color="#00ccff"><strong>Multiplan</strong></font></a><font color="#00ccff"><strong> et de nombreuses impl&eacute;mentations du langage </strong></font><a title="BASIC" href="http://www.manucorp.com/encyclopedie/BASIC"><font color="#00ccff"><strong>BASIC</strong></font></a><font color="#00ccff"><strong>.</strong></font></p>
+
+<p><font color="#00ccff"><strong>Apr&egrave;s le succ&egrave;s mondial de l'</strong></font><a title="Apple II" href="http://www.manucorp.com/encyclopedie/Apple_II"><font color="#00ccff"><strong>Apple II</strong></font></a><font color="#00ccff"><strong> qui a fait la fortune de la soci&eacute;t&eacute; Apple, son nouvel ordinateur, le </strong></font><a title="Macintosh" href="http://www.manucorp.com/encyclopedie/Macintosh"><font color="#00ccff"><strong>Macintosh</strong></font></a><font color="#00ccff"><strong> a besoin, pour r&eacute;ussir son lancement, des logiciels de Microsoft. Apple lui pr&ecirc;te un prototype avec la promesse que son logiciel syst&egrave;me ne sera pas examin&eacute; et copi&eacute;, mais Microsoft souhaite installer par dessus MS-DOS une interface utilisateur avec un syst&egrave;me &agrave; fen&ecirc;trage, et l'utilisation de la souris. Les deux hommes s'affrontent...</strong></font></p>
+
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px"><font color="#00ccff"><strong>[</strong></font><a title="Les Pirates de la Silicon Valley" href="http://fr.wikipedia.com/w/index.php?title=Les_Pirates_de_la_Silicon_Valley&amp;action=edit&amp;section=2"><font color="#00ccff"><strong>modifier</strong></font></a><font color="#00ccff"><strong>]</strong></font></div>
+<p><a id="Fiche_technique" name="Fiche_technique"><font color="#00ccff"><strong></strong></font></a></p>
+<h2><font color="#00ccff">Fiche technique</font></h2>
+<ul>
+    <li><font color="#00ccff"><strong>R&eacute;alisation&nbsp;: Martyn Burke</strong></font></li>
+    <li><font color="#00ccff"><strong>Sc&eacute;nario&nbsp;: Paul Freiberger, Michael Swaine, Martyn Burke</strong></font></li>
+
+    <li><font color="#00ccff"><strong>Musique originale&nbsp;: Frank Fitzpatrick</strong></font></li>
+    <li><font color="#00ccff"><strong>Image&nbsp;: Ousama Rawi</strong></font></li>
+    <li><font color="#00ccff"><strong>Montage&nbsp;: Richard Halsey</strong></font></li>
+    <li><font color="#00ccff"><strong>Direction artistique&nbsp;: Brandt Gordon</strong></font></li>
+    <li><font color="#00ccff"><strong>Dur&eacute;e&nbsp;: 95 mn</strong></font></li>
+
+</ul>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px"><font color="#00ccff"><strong>[</strong></font><a title="Les Pirates de la Silicon Valley" href="http://fr.wikipedia.com/w/index.php?title=Les_Pirates_de_la_Silicon_Valley&amp;action=edit&amp;section=3"><font color="#00ccff"><strong>modifier</strong></font></a><font color="#00ccff"><strong>]</strong></font></div>
+<p><a id="Distribution" name="Distribution"><font color="#00ccff"><strong></strong></font></a></p>
+<h2><font color="#00ccff">Distribution</font></h2>
+<ul>
+    <li><a class="new" title="Anthony Michael Hall" href="http://fr.wikipedia.com/w/index.php?title=Anthony_Michael_Hall&amp;action=edit"><font color="#00ccff"><strong>Anthony Michael Hall</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a title="Bill Gates" href="http://www.manucorp.com/encyclopedie/Bill_Gates"><font color="#00ccff"><strong>Bill Gates</strong></font></a></li>
+    <li><a title="Noah Wyle" href="http://www.manucorp.com/encyclopedie/Noah_Wyle"><font color="#00ccff"><strong>Noah Wyle</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a title="Steve Jobs" href="http://www.manucorp.com/encyclopedie/Steve_Jobs"><font color="#00ccff"><strong>Steve Jobs</strong></font></a></li>
+
+    <li><a class="new" title="Joey Slotnick" href="http://fr.wikipedia.com/w/index.php?title=Joey_Slotnick&amp;action=edit"><font color="#00ccff"><strong>Joey Slotnick</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a title="Steve Wozniak" href="http://www.manucorp.com/encyclopedie/Steve_Wozniak"><font color="#00ccff"><strong>Steve Wozniak</strong></font></a></li>
+    <li><a class="new" title="John Di Maggio" href="http://fr.wikipedia.com/w/index.php?title=John_Di_Maggio&amp;action=edit"><font color="#00ccff"><strong>John Di Maggio</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a title="Steve Ballmer" href="http://www.manucorp.com/encyclopedie/Steve_Ballmer"><font color="#00ccff"><strong>Steve Ballmer</strong></font></a></li>
+    <li><a class="new" title="Josh Hopkins" href="http://fr.wikipedia.com/w/index.php?title=Josh_Hopkins&amp;action=edit"><font color="#00ccff"><strong>Josh Hopkins</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a title="Paul Allen" href="http://www.manucorp.com/encyclopedie/Paul_Allen"><font color="#00ccff"><strong>Paul Allen</strong></font></a></li>
+    <li><a class="new" title="Allan Royal" href="http://fr.wikipedia.com/w/index.php?title=Allan_Royal&amp;action=edit"><font color="#00ccff"><strong>Allan Royal</strong></font></a><font color="#00ccff"><strong>&nbsp;: </strong></font><a class="new" title="John Sculley" href="http://fr.wikipedia.com/w/index.php?title=John_Sculley&amp;action=edit"><font color="#00ccff"><strong>John Sculley</strong></font></a></li>
+
+</ul>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px"><font color="#00ccff"><strong>[</strong></font><a title="Les Pirates de la Silicon Valley" href="http://fr.wikipedia.com/w/index.php?title=Les_Pirates_de_la_Silicon_Valley&amp;action=edit&amp;section=4"><font color="#00ccff"><strong>modifier</strong></font></a><font color="#00ccff"><strong>]</strong></font></div>
+<p><a id="Commentaires" name="Commentaires"><font color="#00ccff"><strong></strong></font></a></p>
+<h2><font color="#00ccff">Commentaires</font></h2>
+<p><font color="#00ccff"><strong>Tr&egrave;s largement construit &agrave; partir des t&eacute;moignages des acteurs de l'&eacute;poque, ce film - consid&eacute;r&eacute; par certain comme avantageant Apple au d&eacute;triment de Microsoft - est pourtant un expos&eacute; fid&egrave;le, bas&eacute; sur les t&eacute;moignages des personnages-cl&eacute;s de l'&eacute;poque - de la cr&eacute;ation et de la rivalit&eacute; des deux entreprises, et qui le sont de nouveaux aujourd'hui, gr&acirc;ce &agrave; l'immense succ&egrave;s de l'iPod d'Apple...</strong></font></p>
+
+<p><font color="#00ccff"><br clear="all" /><strong></strong></font></p><br/>
+			</table>
+		  <br/>		  <br/>
+		   <a href="/cgi-bin/recordz.cgi?lang=FR&amp;session=b08798c2597a161b94bb8805aaa29dbb&amp;action=detailother&amp;article=55&amp;viewcommentaire=0" class="menulink" class=&{ns4class};>Masquer les questions
+</a>&nbsp;&nbsp;<a href="/cgi-bin/recordz.cgi?lang=FR&session=b08798c2597a161b94bb8805aaa29dbb&action=detailother&article=55&viewcommentaire=1" class="menulink" class=&{ns4class};>Montrer les questions
+</a>&nbsp;&nbsp;<a href="" class="menulink" class=&{ns4class}; onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=b08798c2597a161b94bb8805aaa29dbb&page=commentaire&amp;article=55','MyWindow3','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=530,height=485,left=20,top=20')"/>Insérer une question
+</a><br/>
+  		   <br />			¨
+		   
+		</form>
+	</div>
+
+ </div>
+</body>
+</html>

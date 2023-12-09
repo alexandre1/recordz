@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Vente aux enchères d'articles neufs et occasions et vente de boutiques </title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+// xp_progressbar
+// Copyright 2004 Brian Gosselin of ScriptAsylum.com
+var w3c=(document.getElementById)?true:false;
+var ie=(document.all)?true:false;
+var N=-1;
+
+function createBar(w,h,bgc,brdW,brdC,blkC,speed,blocks,count,action){
+if(ie||w3c){
+var t='<div id="_xpbar'+(++N)+'" style="visibility:visible; position:relative; overflow:hidden; width:'+w+'px; height:'+h+'px; background-color:'+bgc+'; border-color:'+brdC+'; border-width:'+brdW+'px; border-style:solid; font-size:1px;">';
+t+='<span id="blocks'+N+'" style="left:-'+(h*2+1)+'px; position:absolute; font-size:1px">';
+for(i=0;i<blocks;i++){
+t+='<span style="background-color:'+blkC+'; left:-'+((h*i)+i)+'px; font-size:1px; position:absolute; width:'+h+'px; height:'+h+'px; '
+t+=(ie)?'filter:alpha(opacity='+(100-i*(100/blocks))+')':'-Moz-opacity:'+((100-i*(100/blocks))/100);
+t+='"></span>';
+}
+t+='</span></div>';
+document.write(t);
+var bA=(ie)?document.all['blocks'+N]:document.getElementById('blocks'+N);
+bA.bar=(ie)?document.all['_xpbar'+N]:document.getElementById('_xpbar'+N);
+bA.blocks=blocks;
+bA.N=N;
+bA.w=w;
+bA.h=h;
+bA.speed=speed;
+bA.ctr=0;
+bA.count=count;
+bA.action=action;
+bA.togglePause=togglePause;
+bA.showBar=function(){
+this.bar.style.visibility="visible";
+}
+bA.hideBar=function(){
+this.bar.style.visibility="hidden";
+}
+bA.tid=setInterval('startBar('+N+')',speed);
+return bA;
+}}
+
+function startBar(bn){
+var t=(ie)?document.all['blocks'+bn]:document.getElementById('blocks'+bn);
+if(parseInt(t.style.left)+t.h+1-(t.blocks*t.h+t.blocks)>t.w){
+t.style.left=-(t.h*2+1)+'px';
+t.ctr++;
+if(t.ctr>=t.count){
+eval(t.action);
+t.ctr=0;
+}}else t.style.left=(parseInt(t.style.left)+t.h+1)+'px';
+}
+
+function togglePause(){
+if(this.tid==0){
+this.tid=setInterval('startBar('+this.N+')',this.speed);
+}else{
+clearInterval(this.tid);
+this.tid=0;
+}}
+
+function togglePause(){
+if(this.tid==0){
+this.tid=setInterval('startBar('+this.N+')',this.speed);
+}else{
+clearInterval(this.tid);
+this.tid=0;
+}}
+
+function redirectpage(){
+bar1.togglePause()
+window.location="http://localhost:80/cgi-bin/recordz.cgi?lang=fr&page=main"
+}
+</script>
+</head>                                                                                   
+
+<body>              
+<center></center>
+<div style="background: url(../images/concept1.gif) center center no-repeat;">
+<table align="center">
+<tr>
+    <td align="center"><img src="../images/7.jpg" heigth="50" width="50"><img src="../images/8.jpg" heigth="50" width="50"></img></td>
+</tr>                                
+<tr>
+    <td align="center"><img src="../images/avant-garde-new.png"<td>
+</tr>                           
+<tr>
+    <td align="center"><script type="text/javascript">var bar1= createBar(500,5,'white',1,'#94CEFA','#94CEFA',25,7,1,"redirectpage()");</script></td>
+</tr>
+<tr> 
+    <td align="center"><font color="blue"><b>Please wait...use only french (translation not completed) best view with *Firefox*</b></font></td>
+</tr>                               
+</table>
+<table align="center">
+<tr> 
+    <td align="center">Tech used : XHTML, Mod_perl 2.0, Perl, CSS</td>
+</tr>                               
+
+</table>
+
+</div>
+
+<div align="center"></div>
+</body>
+</html>
+

@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 520px;
+  padding: 10px;
+  background-color: white;
+  border-style: groove;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password],.form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+</style>
+
+<script language="javascript">
+		function go()
+		{
+			box = document.search_form.category;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		function go2()
+		{
+			box = document.search_form.brand;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+    function openForm(articleId,buyer,a_payeId,lang) {
+	    document.getElementById("myForm").style.display = "$ARTICLE{'show'}";
+	    document.getElementById("article_id").value (articleId);
+	    document.getElementById("buyer").value (buyer);
+	    document.getElementById("a_payeId").value (buyer);
+	    document.getElementById("lang").value (lang);	    
+    }
+
+    function openFormFirstTime() {
+	    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+	    document.getElementById("myForm").style.display = "none";
+    }
+
+		function go3()
+		{
+			box = document.search_form.canton;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+</script>
+</head>
+<body><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+<!--    <img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID&u=$u'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&u=$u'">-->
+<p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form name="search_form" action="/cgi-bin/dossearch.pl?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="u" value="$u" />
+		<input type="hidden" name="p" value="$p" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" style="border-radius: 12px;"/>&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<div class="centre">
+	    <br/>
+		<fieldset>
+			<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=personal_data&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'personal_data'}</a><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myench
+			&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'my_enchere'}</a>&nbsp;<a href="/cgi-bin/add_other.pl?lang=$LANG&amp;page=add_other&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'vinyl_add_one'}</a>&nbsp;<a href="/cgi-bin/advertise.pl?lang=$LANG&amp;page=advertise&u=$u" class="menulink" class=&{ns4class};>$LABEL{'advertise'}</a>
+		</fieldset>
+	</div>
+	<br/>
+	<table>
+	</table><br />
+	<table>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mybuytobuy&u=$u;" class="menulink" class=&{ns4class};>Mes articles a payes($ARTICLE{'buy_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mywaitdelivering&u=$u;" class="menulink" class=&{ns4class};>Mes attentes de livraison($ARTICLE{'deliver_counter'})</a></td>
+	</tr>
+
+
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mybuywaiting&u=$u;" class="menulink" class=&{ns4class};>Mes attentes de payement($ARTICLE{'buy_waiting_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mybuytodeliver&u=$u;" class="menulink" class=&{ns4class};>Mes objects a livres ($ARTICLE{'todeliver_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mybuysoulevement&u=$u;" class="menulink" class=&{ns4class};>Mes attentes de soulevement ($ARTICLE{'soulevement_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mybuysoulevement_a_aller_chercher&u=$u;" class="menulink" class=&{ns4class};>Mes articles a aller chercher ($ARTICLE{'soulevement_a_aller_chercher_counter'})</a></td>
+	</tr>
+
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mynotdeal&u=$u;" class="menulink" class=&{ns4class};>Mes invendus ($ARTICLE{'invendu_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mycurrentdeal&u=$u;" class="menulink" class=&{ns4class};>Mes objets en vente ($ARTICLE{'current_deal_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mycurrentbuy&u=$u;" class="menulink" class=&{ns4class};>Mes articles achetes ($ARTICLE{'current_buy_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=mydealpassed&u=$u;" class="menulink" class=&{ns4class};>Mes articles vendus ($ARTICLE{'my_deal_passed_counter'})</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=statdealarticlebrand&u=$u;" class="menulink" class=&{ns4class};>Statistiques des ventes par marque</a></td>
+	</tr>
+	<tr>
+		<td><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myencheredeal&session=$SESSIONID&option=statdealarticleville&u=$u;" class="menulink" class=&{ns4class};>Statistiques des ventes par canton</a></td>
+	</tr>
+
+	</table>
+	$ARTICLE{'table_index_buywaiting'}
+	$ARTICLE{'table_buywaiting'}
+	$ARTICLE{'table_index_invendu'}
+	$ARTICLE{'table_invendu'}
+	$ARTICLE{'table_index_todeliver'}
+	$ARTICLE{'table_todeliver'}
+	$ARTICLE{'table_index_deliver_waiting'}
+	$ARTICLE{'table_deliver_waiting'}	
+	$ARTICLE{'table_index_current_deal'}
+	$ARTICLE{'table_current_deal'}
+	$ARTICLE{'mybuyindex'}
+	$ARTICLE{'mybuy_table'}
+	$ARTICLE{'mydeal_passed_index'}
+	$ARTICLE{'mydeal_passed_table'}
+	 <div class="rigth">$ARTICLE{'table_index_current_deal'}</div>
+	$ARTICLE{'table_index_effect'}
+	$ARTICLE{'table_effect'}
+	$ARTICLE{'table_index_soulevement'}
+	$ARTICLE{'table_soulevement'}
+	$ARTICLE{'mybuytobuyindex'}
+	$ARTICLE{'mybuytobuytable'}
+	$SELECT{'type_article'}
+	$SELECT{'brand'}
+	$SELECT{'canton'}
+	$IMG{'statistiques_brand'}
+	$IMG{'statistiques_canton'}
+	</div>
+    </form>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container" name="myForm">
+	<input type="hidden" name="show_popup" value="true"/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="doupdatestatutarticle">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="u" value="$u">
+		<input type="hidden" name="option" value="mybuywaiting"/>
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+		<td>Vous avez re�u</td><td><input type="checkbox" name="payed"></td>
+	</tr>	
+	<tr>
+		<td>D�lais d'attente pour le payement sur 10 (tr�s rapide)</td><td><select name="note" onfocus="skipcycle=true" onblur="skipcycle=false"><option value="10">10</option><option value="9">9</option><option value="8">8</option><option value="7">7</option><option value="6">6</option><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select></td>
+	</tr>
+	<tr>
+		<td>Commentaire pour l'acheteur</td><td><textarea name="commentaire" onfocus="skipcycle=true" onblur="skipcycle=false"></textarea></td>
+	</tr>
+
+	</table>
+	<br/>Adresse du destinataire
+	<table>
+					<tr>
+					      <td width="208"><label id="first_name_label">$LABEL{'first_name_label'}</label></td>
+					      <td width="149"><input type="text" name="first_name" value="$ARTICLE{'first_name'}"/></td>					      
+					</tr>
+					<tr>
+					      <td><label id="name_label">$LABEL{'name_label'}</label></td>
+					      <td><input type="text" name="name" value="$ARTICLE{'name_per'}"/></td>				
+					</tr>
+					<tr>
+					      <td><label id="country_label">$LABEL{'country_label'}</label></td>
+					      <td> <input type="text" disabled="true" name="country_name" value="$ARTICLE{'country'}"</input></td>
+					</tr>
+					<tr>
+					      <td><label id="adress_label">$LABEL{'adress_label'}</label></td>
+					      <td><input type="text" name="adress_name" value="$ARTICLE{'adress_name'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="city_label">$LABEL{'city_label'}</label></td>
+					      <td><input type="text" name="city" value="$ARTICLE{'city'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="npa_label">$LABEL{'npa_label'}</label></td>
+					      <td><input type="text" name="npa" value="$ARTICLE{'npa'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="phone_number_label">$LABEL{'phone_number1_label'}</label></td>
+					      <td><input type="text" name="phone_number" value="$ARTICLE{'phone_number'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="email_label">$LABEL{'email1_label'}</label> </td>
+					      <td><input type="text" name="email" value="$ARTICLE{'email'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="email_label">$LABEL{'iban_label'}</label> </td>
+					      <td><input type="text" name="iban" value="$ARTICLE{'iban'}"/></td>
+					</tr>
+					<tr>
+					      <td><label id="email_label">$LABEL{'skype_label'}</label> </td>
+					      <td><input type="text" name="skype" value="$ARTICLE{'skype'}"/></td>
+					</tr>
+
+	</tr>		
+	</table>
+
+
+	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=dosearchart',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="closeForm();" value="Fermer">
+
+  </form>
+</div>
+<div class="form-popup" id="myForm2">
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="doupdatestatutarticle">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+		<td>Num&eacute;ro iban</td><td><input type="text"  disabled="true" name="iban"/ value="$ARTICLE{'iban'}"></td>
+	</tr>
+	<tr>
+		<td>Signal� que vous avez pay�</td><td><input type="checkbox" name="payed"></td>
+	</tr>	
+	</tr>
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=doupdatestatutarticleispayed',true,0500)" value="Mise � jour">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+  </form>
+</div>
+</body>
+</html>

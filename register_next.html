@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<script language="javascript">
+		function go()
+		{
+			
+			box = document.insert_form.account_type;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		function go2()
+		{
+			
+			box = document.insert_form.time;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+	</script>
+</head>
+<body><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+    <img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID&page=register'">&nbsp;<img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&page=register'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID&page=register'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&page=myaccount'">
+    <p style="margin:10px;"><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login&session=$SESSIONID;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=about&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&session=$SESSIONID;" class="menulink">$LABEL{'tarif'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=fondation&session=$SESSIONID;" class="menulink">$LABEL{'fondation'}</a></p>
+    <div class="search_box">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="$LANG" />
+			<input type="hidden" name="session" value="$SESSIONID"/>
+			<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+			<input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<div class="centre">
+			<FORM ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="POST">
+			<INPUT TYPE="hidden" NAME="cmd" VALUE="_ext-enter">
+			<INPUT TYPE="hidden" NAME="redirect_cmd" VALUE="_xclick">
+			<INPUT TYPE="hidden" NAME="business" VALUE="alexjaquet@gmail.com">
+			<INPUT TYPE="hidden" NAME="undefined_quantity" VALUE="1">
+			<INPUT TYPE="hidden" NAME="item_name" VALUE="$ARTICLE{'register_username'}">
+			<INPUT TYPE="hidden" NAME="item_number" VALUE="$ARTICLE{'register_id'}">
+			<INPUT TYPE="hidden" NAME="amount" VALUE="$ARTICLE{'register_amount'}">
+			<INPUT TYPE="hidden" NAME="currency_code" VALUE="EUR">
+			<INPUT TYPE="hidden" NAME="first_name" VALUE="$ARTICLE{'register_firstname'}">
+			<INPUT TYPE="hidden" NAME="last_name" VALUE="$ARTICLE{'register_lastname'}">
+			<INPUT TYPE="hidden" NAME="address1" VALUE="$ARTICLE{'register_adress'}">
+			<INPUT TYPE="hidden" NAME="city" VALUE="$ARTICLE{'register_city'}">
+			<input type="hidden" name="return" value="http://avant-garde.no-ip.biz/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=payed_success&username=$ARTICLE{'register_username'}">
+			<input type="hidden" name="cancel_return" value="http://avant-garde.no-ip.biz/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=payed_cancel&username=$ARTICLE{'register_username'}">
+			<input type="hidden" name="notify" value="http://avant-garde.no-ip.biz/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=notify&username=$ARTICLE{'register_username'}"
+			<INPUT TYPE="hidden" NAME="zip" VALUE="$ARTICLE{'register_npa'}">
+			<INPUT TYPE="hidden" NAME="lc" VALUE="CH">
+			<INPUT TYPE="hidden" NAME="email" VALUE="$ARTICLE{'register_email'}">
+			<INPUT TYPE="hidden" NAME="night_phone_a" VALUE="41">
+			<INPUT TYPE="hidden" NAME="night_phone_b" VALUE="$ARTICLE{'register_phone'}">
+			<INPUT TYPE="image" SRC="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" BORDER="0" NAME="submit" ALT=Make payments with PayPal - it's fast, free and secure! width="50" height="50">
+			</FORM>				
+		</div>
+	</div>
+</body>
+		<p align="center">code &amp;&nbsp;design by <b>alexandre jaquet © 2005 </b> using mod_perl &amp; xhtml</p>
+		<p align="center"><a href="mailto:alexjaquet@gmail.com">contact </a></p>
+</html>

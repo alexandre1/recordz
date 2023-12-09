@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.fabricant;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+
+			opener.location.href = url;
+	}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dosearchimmo">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+  $SELECT{'time'}
+  $SELECT{'price'}
+
+	</tr>	
+	<tr>
+	</tr>
+
+	</tr>
+	</table>
+	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=dosearchcar',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

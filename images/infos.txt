@@ -1,0 +1,97 @@
+DJ Market Place
+--------------------------------
+
+
+Idées générales
+--------------------------------
+
+Site internet de vente de matériels de dj's ainsi que de vinyls. Ce site
+est basé sur un modèle multi-dépots ce qui signifique que nous rassemblons
+plusieurs point de vente basé géographiquement sur plusieurs locations en un
+seul site internet.
+
+Ce site permet, pour chacun des utilisateurs enregistrés de rechercher, acheter,
+mettre en vente leurs matériels, vinyls.
+
+Le site est multilangues et est à vocation internationale. 
+
+Il est consitué d'un système de gestion complet permettant aux responsables de dépots :
+
+-gestion des commandes par jour / semaine / mois
+-gestion des articles / affichage par statut
+-ajout d'article (nan tu crois :))
+
+Mise en vente d'article
+--------------------------------
+
+La mise en vente d'article par les utilisateurs se déroulent de la manière suivante :
+
+1) L'utilisateur s'identifie
+2) L'utilisateur clique sur le lien Mon compte
+3) L'utilisateur clique sur le lien Mettre en vente
+4) L'utilisateur séléctionne le type d'article qu'il désire vendre
+5) L'utilisateur entre les informations relatives à l'article ainsi que le
+   dépt de destination ou celui-ci sera stocké.
+
+L'utilisateur doit ensuite envoyé par colis, ou se déplacer au dépot le plus proche
+afin de faire valider ses articles. 
+
+Fonctionalités supplémentaires
+--------------------------------
+
+Chaque utilisateur peut inscrire dans une liste de voeux les 
+articles qu'il désire, lorsque ceux-ci arrive en stock il est automatiquement
+notifié de l'arrivé de ceux-ci.
+
+-Recherche par dépot. 
+-Contrôle permanent du statut des articles
+-Archivage des commandes / ventes de chaque utilisateur
+
+Validation d'articles, mise en vente officielle
+--------------------------------
+
+La personne responsable du dépot, se chargera de controler la qualité des articles
+dont les personnes veulent la mise en vente.
+
+Lorsqu'un accord aura été défini pour le prix d'achat des articles le responsable 
+se rendra sur l'interface d'administration DJ Market Place, modifiera le statut 
+et définir le prix de vente des articles.
+
+Lorsque ces opérations seront faites l'article sera officiellement dans le catalogue de données
+de DJ Market Place.
+
+
+Prix et marge
+--------------------------------
+
+Le responsable du dépot sera rémunéré selon plusieurs critères
+
+1) Si celui-ci possède déjà un stock d'article conséquent (magasin) il devra s'aquitté
+   d'une taxe mensuelle de 50 à 100 .- 
+
+2) Dans le cas contraire il touchera 20% et le vendeur 60%
+
+Exemple : 
+
+Pour un article dont le prix de mise en vente est de 1000.-, 
+
+-600 .- sont reversés  au vendeur de l'article soit 60%
+-200 .- sont reversés  au responsable du dépot soit 20%
+-200 .- sont reversés sur le compte de DJ Market Place
+
+Pour un article dont le prix de mise en vente est de 500.-, 
+
+-300 .- sont reversés  au vendeur de l'article soit 60%
+-100 .- sont reversés  au responsable du dépot soit 20%
+-100 .- sont reversés sur le compte de DJ Market Place
+
+Pour un article dont le prix de mise en vente est de 7.-, 
+
+-3 .- sont reversés  au vendeur de l'article soit 60%
+-2 .- sont reversés  au responsable du dépot soit 20%
+-2 .- sont reversés sur le compte de DJ Market Place
+
+vendredi 22 juillet 
+
+--
+Alexandre Jaquet

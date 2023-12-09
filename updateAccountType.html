@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<title>$LABEL{'title_update_account_type'}</title>
+
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+		function go()
+		{
+			
+			box = document.select_wish.type_de_compte;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}	
+		function go2()
+		{
+			
+			box = document.select_wish.time;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}			
+	   function Lvl_P2P(url,closeIt,delay){
+			date_start_value = this.document.select_wish.date_start.value;	   
+			date_end_value = this.document.select_wish.date_end.value;
+			if (this.document.select_wish.type_de_compte) {
+				box = document.select_wish.type_de_compte;		
+				account_value = box.options[box.selectedIndex].value;					
+			}													
+			if (this.document.select_wish.price) {
+				price_value = this.document.select_wish.price.value;			
+			}
+			opener.location.href = url + '&date_start=' + date_start_value +'&date_end=' + date_end_value + '&account_type=' + account_value + '&price=' + price_value;
+	}			
+	</script>
+</head>
+
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<form name="select_wish">
+	#Mettre un lien pour le payement
+	<table>
+	<tr>
+		<td>$LABEL{'account_type_label'}</td><td>$OPTIONS</td>
+	</tr>
+	
+	<tr>
+		$TIME
+	</tr>
+	<tr>
+		$PRICE
+	</tr>
+	<tr>
+		<td>$LABEL{'date_start_label'}</td><td>$DATE_START</td>
+	</tr>
+	<tr>
+		<td>$LABEL{'date_end_label'}</td><td>$DATE_END</td>
+	</tr>
+
+
+	<tr>
+		<td align="center"><input type="button" value="$LABEL{'update'}" onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&action=dolongerAccountType',true,0500)" value="Chercher"/></td><td align="center"><input type="button" value="$LABEL{'close'}" onclick="window.close();"/></td>
+	</tr>
+	</table>
+</form>	
+</body>
+</html>

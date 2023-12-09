@@ -1,0 +1,54 @@
+<html>
+<head>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<form id="contener" method="post" action="/cgi-bin/update_statut_article_send.pl">
+<input type="hidden" name="action" value="update_statut_article_send"/>
+<input type="hidden" name="lang" value="$LANG"/>
+<input type="hidden" name="u" value="$u"/>
+<input type="hidden" name="article" value="$ARTICLE{'id_article'}"/>
+<input type="hidden" name="id_a_livre" value="$ARTICLE{'id_a_livre'}"/>
+
+Vous envoyer l'article<br/>
+    
+<table style="border-radius: 25px;border: 2px solid#6100C1;padding: 20px;" width="555" border="0">
+    
+    <br/>
+        <td width="208">&nbsp;&nbsp;&nbsp;<label id="first_name_label">$LABEL{'first_name_label'}</label></td>
+        <td width="149"><input type="text" name="first_name" value="$ARTICLE{'first_name'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="name_label">$LABEL{'name_label'}</label></td>
+        <td><input type="text" name="name" value="$ARTICLE{'name'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="country_label">$LABEL{'country_label'}</label></td>
+        <td> <input type="text" name="country_name" value="$ARTICLE{'country'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="adress_label">$LABEL{'adress_label'}</label></td>
+        <td><input type="text" name="adress_name" value="$ARTICLE{'adresse'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="city_label">$LABEL{'city_label'}</label></td>
+        <td><input type="text" name="city" value="$ARTICLE{'city'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="npa_label">$LABEL{'npa_label'}</label></td>
+        <td><input type="text" name="npa" value="$ARTICLE{'npa'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="phone_number_label">$LABEL{'phone_number1_label'}</label></td>
+        <td><input type="text" name="phone_number" value="$ARTICLE{'phone_number'}"/></td>
+  </tr>
+  <tr>
+        <td>&nbsp;&nbsp;&nbsp;<label id="email_label">$LABEL{'email1_label'}</label> </td>
+        <td><input type="text" name="email" value="$ARTICLE{'email'}"/></td>
+  </tr>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Envoyer"></input></td><td><input type="button" name="close" value="Fermer" onclick="window.close();"</input></td>
+    </tr>
+</table>
+</form>
+</html>

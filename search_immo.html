@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.country;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go2()
+		{
+			
+			box = document.select_wish.subcategory;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		function go3()
+		{			
+			box = document.select_wish.canton;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go4()
+		{
+			
+			box = document.select_wish.immo_type;destination = box.options[box.selectedIndex].value;if (destination) location.href = destination;
+		}
+		function go5()
+		{	
+			box = document.select_wish.departement;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+	function Lvl_P2P(url,closeIt,delay){ //ver1.0 4LevelWebs
+		var country_value;
+		var canton_value;
+		var departement_value;
+		var type_de_bien_value;
+		var type_de_vente_value;
+		
+		if (document.select_wish.country) {
+			country_box = document.select_wish.country;
+			country_value = country_box.options[country_box.selectedIndex].value;
+			if (country_value.length == 0) {
+				country_value = '';
+			}
+		}
+		if (document.select_wish.departement) {
+			departement_box = document.select_wish.departement;
+			departement_value = departement_box.options[departement_box.selectedIndex].value;
+			if (departement_value.length == 0) {
+				departement_value = '';
+			}
+		}
+		if (document.select_wish.price_min) {
+			price_min_value = document.select_wish.price_min.value;
+			url = url + '&price_min=' + price_min_value;				
+		}
+		if (document.select_wish.price_max) {
+			price_max_value = document.select_wish.price_max.value;
+			url = url + '&price_max=' + price_max_value;				
+		}
+		if (document.select_wish.canton) {
+			canton_box = document.select_wish.canton;
+			canton_value =  canton_box.options[canton_box.selectedIndex].value;
+		}
+		if (document.select_wish.subcategory) {
+			type_box = document.select_wish.subcategory;
+			type_de_bien_value = type_box.options[type_box.selectedIndex].value;
+		}
+		if (document.select_wish.mode) {
+			mode_box = document.select_wish.mode;
+			type_de_vente_value = mode_box.options[mode_box.selectedIndex].value;
+		}
+		url = url + '&country=' + country_value + '&canton=' + canton_value + '&departement=' + departement_value + '&type_de_bien=' + type_de_bien_value + '&type_de_vente=' + type_de_vente_value;
+		opener.location.href = url;
+	}
+	</script>
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dosearchimmo">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+		<tr>* = Champs requis</tr>
+	<tr>
+		<td>$LABEL{'country'}</td><td>$SELECT{'country'} *</td>
+	</tr>
+	<tr>
+		<td>$LABEL{'departement_or_canton'}</td><td>$SELECT{'departement_or_canton'} *</td>
+	<tr>
+		<td>Type de bien</td><td>$SELECT{'immo_type'} *</td>		
+	<tr>
+		<td>$LABEL{'loyer_properties'}</td><td>$SELECT{'loyer_properties'} *</td>
+	</tr>
+<td>$LABEL{'price_min'}</td><td><input type="text" name="price_min"></td><td>$LABEL{'price_max'}</td><td><input type="text" name="price_max"></td>
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&action=dosearchimmo',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

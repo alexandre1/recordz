@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function go()
+	{
+		
+		box = document.select_wish.navi;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+	function ench () {
+		montant = document.select_wish.encherepriceprice.value;
+		location.href = '/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&action=enchere&article=1&encherepriceprice=' + montant;
+	}
+</script>
+
+</head>
+<body><div class="header"></div>
+<div class="conteneur">
+<br />
+    <img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1'">&nbsp;<img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1'">
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Home
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=myaccount&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Mon Compte
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?action=viewbasket&amp;lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5;"class="menulink" class=&{ns4class}; >Mon caddie
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=login&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Login
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=register&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Nouvel utilisateur
+</a><a href="javascript:void(0)" class="menulink" class=&{ns4class}; onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;page=cms_manage_article&amp;session=f6e52d215efb1225e6d6647b3221e4b5;','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=800,height=600,left=20,top=20')">Admin</a></p>
+    <div id="search_box">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=fr&amp;action=search&session=f6e52d215efb1225e6d6647b3221e4b5" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="fr" />
+			<input type="hidden" name="session" value="f6e52d215efb1225e6d6647b3221e4b5"/>
+			<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">Nom
+</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories"><option>Toutes les catégories
+</option><option>automobile</option><option>enceinte</option><option>habits femme</option><option>habits homme</option><option>immobilier</option><option>informatique</option><option>mix tape</option><option>natel</option><option>platine</option><option>table de mix</option><option>tv / vidéo</option><option>vinyl</option></select>
+			<input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+	</div>
+	<div id="list-menu">
+		<ul style="float:left;">
+			<li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=auto&amp;type=8&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Automobile</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=tv_video&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>TV /vidéo / photos</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Natel</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=informatique&amp;&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Informatique</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Habits</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Immobilier</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=vinyl&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>CD / Article</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Montres & Bijoux</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Sport</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Vins</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=matos_news&amp;type=2&session=f6e52d215efb1225e6d6647b3221e4b5;" class="menulink" class=&{ns4class};>Mix table</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=matos_news&amp;type=4&session=f6e52d215efb1225e6d6647b3221e4b5" class="menulink" class=&{ns4class};>Platine</a></li>
+		</ul>
+	</div>
+	<div class="centre">
+	<img src="../images/detail_fr.jpg" width="300px" height="60px"><img src="http://supermarket.no-ip.biz/upload/thumb.1.jpg"  border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&action=show_image&amp;image=1','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="http://supermarket.no-ip.biz/upload/thumb.1.2.jpg" border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&action=show_image2&amp;image=1.2.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="http://supermarket.no-ip.biz/upload/thumb.1.3.jpg" border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&action=show_image2&amp;image=1.3.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="http://supermarket.no-ip.biz/upload/thumb.1.4.jpg" border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&action=show_image2&amp;image=1.4.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">
+		<fieldset>
+		<form name="select_wish" action="/cgi-bin/recordz.cgi">
+		<input type="hidden" name"id_article" value="1"/>
+		<input type="hidden" name="lang" value="fr" />
+		<input type="hidden" name="action" value="add_other" />
+		<input type="hidden" name="session" value="f6e52d215efb1225e6d6647b3221e4b5"/>
+		
+			<table width="560" border="0">
+			  <tr>
+				<td><label id="label_category_name">Catégorie</label></td>			
+				<td><input type="text" name="category" value="automobile"></td>
+				<td width="200"><label id="label_category_name">Nbr vues </label></td>			
+				<td><label id="label_category_name"><input type="text" value="83"></td>			
+			  </tr>
+  			  <tr>
+				<td><label id="label_price">Vendeur</label></td>
+				<td><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&page=profil_vendeur&username=test">test</a><img src="../images/anime_star.gif"></td>
+				<td width="200"><label id="label_category_name">Nbr d'enchères</label></td>
+				<td><label id="label_category_name"><input type="text" value="1"></td>	
+			  </tr>
+			  <tr>
+				<td><label id="label_article_name">Nom</label></td>
+				<td><input type="text" name="name" value="Ferrari F40"></td>
+				<td width="200"><label id="label_category_name"></label></td><td><label id="label_category_name"><input type="text" value="45001"></label></td>	
+			  </tr>
+			  <tr>
+				<td><label id="label_article_name">Fabricant</label></td>
+				<td><input type="text" name="fabricant" value="Ferrari"></td>
+				<td width="200"><label id="label_category_name">Réalisé par</label></td>
+				<td><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&page=profil_vendeur&username=alexandre">alexandre</a></label></td>
+			  </tr>
+			  <tr>
+				  <td></td>
+				  <td></td>
+				<td width="200" ><label id="label_category_name">Fin de l'enchère </label></td>			
+				<td><input type="text" value="2005-08-11 13:08:45"></td>			
+			  </tr>
+			  <tr>
+				<td><label id="label_price">price</label></td>
+				<td><input type="text" name="price" value="45000"></td>
+				<td width="200px"><label>Temps restant</label></td>
+				<td><input type="text" name="price" value="-1 J -16 H -38 M -32 Sec"></td>								
+			  </tr>
+			  <tr>
+			  <td></td>
+  			  <td></td>
+  			  <td width="200px">Historique des offres</td>
+			  <td><a href="" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&page=historique&amp;article=1','MyWindow3','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=530,height=285,left=20,top=20')">Voir</a></td>
+			  </tr>
+		     <tr>
+ 			   <td>Mode de payement</td>
+  			   <td><input type="text">	</td>
+			   <td width="200px">Mode de livraison</td>
+  			    <td><input type="text">	</td>
+			 </tr>
+			 <tr>
+			 <td></td>
+			 </tr>
+				<tr><td><label id="label_category_name">Enchérir à </label></td>
+				<td><input type="text" name="encherepriceprice" value="45002"></td></tr>
+				<tr><td width="120">Chevaux</td>
+					<td width="120"><input type="text" name="horse" value="300"></td>
+				</tr>
+				<tr>
+					<td width="120">Nombre de km</td>
+					<td width="120"><input type="text" name="km" value="135000"></td>
+				</tr>
+				<tr>
+					<td width="120">An. de fabrication</td>
+					<td width="120"><input type="text" name="year_fabrication" value=""></td>
+				</tr>
+				<tr>
+					<td width="120">1ère immatriculation</td>
+					<td width="120"><input type="text" name="year_service" value="1987-10-10"></td>
+				</tr>
+				<tr>
+					<td width="120">Motorisation</td>
+					<td width="120"><input type="text" value=""></td>
+ 		 	    <tr/>
+			</table>
+					<img src="../images/encherrir.jpg" onclick="ench();" style="border:1px;border-style:dotted;">
+			<table style="background-color:#CCCCFF ">
+					<div style="text-align: center;"><font class="article-texte"><b><span style="color: rgb(255, 0, 0);">Enzo Ferrari</span> souhaitait plus que                tout construire les meilleures voitures de sport, ce qu'il f&icirc;t                avec succ&egrave;s durant quatre d&eacute;cennies. Pour c&eacute;l&egrave;brer                le quaranti&egrave;me anniversaire de sa marque,<br /><br />&nbsp;il mit donc en                oeuvre la r&eacute;alisation d'une automobile sans concession qui                devait marquer l'&eacute;v&egrave;nement de la plus belle fa&ccedil;on                et s'imposer comme la r&eacute;f&eacute;rence absolue parmis les                voitures de sport. <img src="/FCKeditor_2.0/editor/images/smiley/msn/111.gif" alt="" /><br /><br />&nbsp;Suite &agrave; un sale coup du destin, la F40                deviendra aussi le testament roulant du Commendatore</b></font></div><br/>
+			</table>
+<br/>
+						<a href="/cgi-bin/recordz.cgi?lang=FR&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1&viewcommentaire=0">Masquer les questions</a>&nbsp;&nbsp;<a href="/cgi-bin/recordz.cgi?lang=FR&session=f6e52d215efb1225e6d6647b3221e4b5&action=detailother&article=1&viewcommentaire=1">Voir les questions</a>&nbsp;&nbsp;<a href="" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=f6e52d215efb1225e6d6647b3221e4b5&page=commentaire&amp;article=1','MyWindow3','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=530,height=485,left=20,top=20')">Insérer une question</a><br/>
+		     		   <a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;min_index=0&amp;max_index=4&action=detailother&article=1&viewcommentaire=1"  class="menulink2" class=&{ns4class};><-00-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;min_index=4&amp;max_index=4&action=detailother&article=1&viewcommentaire=1"  class="menulink2" class=&{ns4class};><-01-></a>&#160;&nbsp;<img src="../images/next2.gif"><br />			¨
+		   <table style="border-bottom:3px; border-left:3px; border-right:3px; border-top:3px; border-style:dotted;border-color:#94CEFA;">
+		   <tr>
+		   <td width="300px" style="border-style:dotted;border-width:thin;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;action=detailother&amp;article=" class="menulink" class=&{ns4class};>alexandre,</a><br/>test question<br/>euh un petit test de <font size="5"><span style="color: rgb(255, 0, 255);">question raaaaaaaaaaaaaaaaaaaaa <img src="/FCKeditor_2.0/editor/images/smiley/msn/devil_smile.gif" alt="" /></span></font><br/>2005-08-09 09:00:58</td>
+		   <td width="10px"></td>
+		   <td width="300px" style="border-style:dotted;border-width:thin;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;action=detailother&amp;article=" class="menulink" class=&{ns4class};>alexandre,</a><br/>bouh<br/><font size="7"><span style="color: rgb(204, 153, 255);">loool t as cru ct&eacute; la feteuuuu didiou</span><span style="color: rgb(204, 153, 255);" /></font><br/>2005-08-09 09:04:48</td>
+		   <td width="10px"></td>
+		   </tr>
+		   <tr>
+		   </tr>
+		   <tr>
+		   </tr>
+		   <tr>
+		   <td width="300px" style="border-style:dotted;border-width:thin;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;action=detailother&amp;article=" class="menulink" class=&{ns4class};>test,</a><br/>grrr<br/><span style="font-weight: bold; color: rgb(255, 0, 255);">Va falloir : </span><br /><ul>
+    <li style="font-weight: bold;">checker la feuille de style</li>
+    <li><span style="font-weight: bold;">d&eacute;finir des tailles max</span></li>
+</ul><br/>2005-08-09 09:15:38</td><td width="10px"></td><td width="300px" style="border-style:dotted;border-width:thin;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=f6e52d215efb1225e6d6647b3221e4b5&amp;action=detailother&amp;article=" class="menulink" class=&{ns4class};>test,</a><br/>sacre<br/><font size="7" style="color: rgb(255, 0, 0);">VADE RETROOOOOO SATANAS&nbsp;<img src="/FCKeditor_2.0/editor/images/smiley/msn/136.gif" alt="" /></font><br/>2005-08-09 09:19:47</td><td width="10px"></td></tr><tr></tr><tr></tr><tr></table>
+
+		</form>
+  		</fieldset>		
+	</div>
+ </div>
+</body>
+</html>

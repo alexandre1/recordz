@@ -1,0 +1,12 @@
+    local our  $category = $query->param ('category');
+    $category  =~ s/[^\w ]//g;
+    local our  $subcategory = $query->param('subcat');
+    $subcategory  =~ s/[^\w ]//g;
+    local our $fabricant = $query->param ('fabricant');
+    $fabricant  =~ s/[^\w ]//g;
+    local our $valeur = $query->param ('valeur');
+    $valeur  =~ s/[^\w ]//g;
+
+searchJardin ok
+searchParfum ok
+searchArt 

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="$LABEL{'index_title'}" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+    function highLigth (x) {
+		  x.style.background="url('../images/table_item_on.gif') top left no-repeat";
+    }
+    function highLigthOut (x) {
+		  x.style.background="url('../images/table_item.gif') top left no-repeat";
+    }	
+</script>
+
+</head>
+<body>
+<div class="header2"></div>
+<div class="header"></div>
+<div class="conteneur"> <br />
+<img src="../images/fr.gif" height="13px" width="19px" alt="french" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&amp;session=$SESSIONID'"/>&nbsp;<img src="../images/uk.gif" height="13px" width="19px" alt="english" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&amp;session=$SESSIONID'"/>&nbsp;<img src="../images/de.gif" height="13px" width="19px" alt="german" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&amp;session=$SESSIONID'"/>&nbsp;<img src="../images/it.gif" alt="italian" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&amp;session=$SESSIONID'"/>
+<div  id="menu_top" class="menu_top"><img src="../images/mon_compte_$LANG.gif"/><img src="../images/login.gif"/><img src="../images/nouvel_utilsateur_$LANG.gif"/><img src="../images/a_propos_$LANG.gif"/><img src="../images/tarif_$LANG.gif"/><img src="../images/forum.gif"/>$LINK{'add_deal'}</div>
+<div class="search_box">
+<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&amp;session=$SESSIONID" method="post">
+  <fieldset>
+  <input type="hidden" name="action" value="search" />
+  <input type="hidden" name="lang" value="$LANG" />
+  <input type="hidden" name="session" value="$SESSIONID"/>
+  <img src="../images/atb_search.gif" height="15px" width="15px" alt="search"/>&nbsp;
+  <label id="search_name_label">$LABEL{'search_name_label'}</label>
+  &nbsp;
+  <input type="text" name="search_name" value="" />
+  &nbsp;&nbsp;
+  <select name="categories">
+	$OPTIONS{'categories'}
+  </select>
+  <input type="submit" value="Search" />
+  &nbsp;<a href="#" class="menulink"  onclick="window.open('/cgi-bin/recordz.cgi?lang=$LANG&amp;page=preferences&amp;session=$SESSIONID;','MySearchWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=890,height=240,left=0,top=0')">$LABEL{'preferences'}</a>
+  </fieldset>
+</form>
+</div>
+<div class="list-menu">
+<ul style="float:left;">
+  $ARTICLE{'main_menu'}
+</ul>
+</div>
+<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&amp;saw=onlyench;" class="menulink">$LABEL{'only_enchere'}</a><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&amp;saw=lasthour" class="menulink" >$LABEL{'last_hour'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&amp;saw=onlynew" class="menulink" >$LABEL{'only_shop'}</a>
+<div class="centre">
+<form id="select_wish" action="">
+  $IMG_NEW<br/>
+  $ARTICLE{'best_offers_index'}
+  $ARTICLE{'best_offers_table'}<br />
+  <div class="rigth">$ARTICLE{'best_offers_index'}</div>
+</form>
+</div>
+</div>
+</body>
+</html>

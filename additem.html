@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+ <div align="center">
+   <p><a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&action=myaccount">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&page=login">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&page=register">$LABEL{'label_menu_newuser'}</a></p>
+    <div id="search_box" style="">
+	<form name="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&action=search" method="get">
+	<fieldset>
+		<input type="hidden" name="action" value="search">
+		<label id="search_name_label">$LABEL{'search_name_label'}</label><input type="text" name="search_name" value="">
+		<label id="search_genre_label">$LABEL{'search_genre_label'}</label> <input type="text" name="search_genre" value="">
+		<label id="search_artist_label">$LABEL{'search_artist_label'}</label> <input type="text" name="search_artist" value="">
+		<label id="search_tracks_label">$LABEL{'search_tracks_label'}</label> <input type="checkbox" value="">Mix<input type="checkbox" value=""><input type="submit" value="Search">
+	</fieldset>
+	</form>	
+	<p>&nbsp;</p>
+   </div>
+	<div id="detail_vinyl">
+		<fieldset>
+			<p>
+			  <label id="vinyl_quantity_label"></label>
+		</p>
+			<p>
+			  <label></label>
+	          </p>
+			<br />
+			<br />				
+			<input type="button" value="Compléter la commande">
+	    </fieldset>
+	</div>
+ </div>
+</body>
+</html>

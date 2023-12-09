@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>European Electronic DJ Business</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function go()
+	{
+		
+		box = document.select_wish.navi;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+</script>
+
+</head>
+<body><div class="header"></div>
+<div class="conteneur">
+      <p><a href="/cgi-bin/recordz.cgi?lang=$LANG;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?action=viewbasket&amp;lang=$LANG;"class="menulink" class=&{ns4class}; >$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="" class="menulink" class=&{ns4class};>$LABEL{'matos'}</a>&nbsp;&nbsp;<a href="" class="menulink" class=&{ns4class};>$LABEL{'wear'}</a></p>
+    <div id="search_box">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search" method="get">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="$LANG" />
+			<label id="search_name_label">$LABEL{'search_name_label'}</label><input type="text" name="search_name" value="" />
+			<label id="search_genre_label">$LABEL{'search_genre_label'}</label><input type="text" name="search_genre" value="" />
+			<label id="search_artist_label">$LABEL{'search_artist_label'}</label><input type="text" name="search_artist" value="" />
+			<label id="search_tracks_label">$LABEL{'search_tracks_label'}</label><input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+	</div>
+	<div id="list-menu">
+		<ul style="float:left;">
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=hardstyle&amp;type=1;" class="menulink" class=&{ns4class};>Hardstyle</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=house&amp;type=1" class="menulink" class=&{ns4class};>House</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=hardcore&amp;type=1;" class="menulink" class=&{ns4class};>Hardcore</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=trance&amp;type=1;" class="menulink" class=&{ns4class};>Trance</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=hiphop&amp;type=1;" class="menulink" class=&{ns4class};>Hip Hop</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;cat=tek&amp;type=1;" class="menulink" class=&{ns4class};>Techno</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=matos_news&amp;type=2;" class="menulink" class=&{ns4class};>$LABEL{'mix_table_label'}</a></li>
+			<li><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=matos_news&amp;type=4" class="menulink" class=&{ns4class};>Platine</a></li>
+		</ul>
+	</div>
+	<div class="centre">
+		<fieldset>
+			<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=personal_data;">$LABEL{'personal_data'}</a>&nbsp;&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=mycommand;">$LABEL{'my_command'}</a>&nbsp;&nbsp;&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=mywish;">$LABEL{'label_wish_list'}</a>&nbsp;&nbsp;<a href="">$LABEL{'my_deal'}</a>		
+		</fieldset>
+		<br />
+		<fieldset>
+			Code non valide
+  		</fieldset>		
+	</div>
+ </div>
+</body>
+</html>

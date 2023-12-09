@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>DJ Market Place- New User/title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+ <div align="center">
+   <p><a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&action=myaccount">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG">$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&page=login">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&page=register">$LABEL{'label_menu_newuser'}</a></p>
+   <p>&nbsp;</p>
+   <div id="search_box" style="">
+	<p>&nbsp;</p>
+   	</div>
+	<div id="register">
+	<fieldset>
+		<legend>Data</legend>
+			<form name="insert_form" action="/cgi-bin/recordz.cgi" method="post">			
+				<input type="hidden" name="lang" value="$LANG">
+				<input type="hidden" name="action" value="lostPassword">
+				<label id="email_label">$LABEL{'email_label'}</label> <input type="text" name="email" value=""><br />
+		        <input type="submit" value="Send">
+			    <input type="reset" value="Reset">
+			</form>
+	</fieldset>		
+	</div>
+ </div>
+</body>
+</html>

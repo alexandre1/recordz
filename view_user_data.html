@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<br/>
+	<div class="centre">
+		<br/>
+			<form id="update" action="/cgi-bin/recordz.cgi" method="post">			
+				<input type="hidden" name="lang" value="$LANG"/>
+				<input type="hidden" name="session" value="$SESSIONID"/>	
+				<input type="hidden" name="u" value="$u"/>						
+				<table>
+					  <tr>
+						<td width="208"><label id="first_name_label">$LABEL{'first_name_label'}</label></td>
+						<td width="149"><input type="text" name="first_name" value="$ARTICLE{'first_name'}"/></td>
+					    
+					  </tr>
+					  <tr>
+						<td><label id="name_label">$LABEL{'name_label'}</label></td>
+						<td><input type="text" name="name" value="$ARTICLE{'name_per'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="country_label">$LABEL{'country_label'}</label></td>
+						<td><input type="text" name="country" value="$ARTICLE{'country'}"</input>
+						<td>&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td><label id="adress_label">$LABEL{'adress_label'}</label></td>
+						<td><input type="text" name="adress_name" value="$ARTICLE{'adress_name'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="city_label">$LABEL{'city_label'}</label></td>
+						<td><input type="text" name="city" value="$ARTICLE{'city'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="npa_label">$LABEL{'npa_label'}</label></td>
+						<td><input type="text" name="npa" value="$ARTICLE{'npa'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="phone_number_label">$LABEL{'phone_number_label'}</label></td>
+						<td><input type="text" name="phone_number" value="$ARTICLE{'phone_number'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="email_label">$LABEL{'email_label'}</label> </td>
+						<td><input type="text" name="email" value="$ARTICLE{'email'}"/></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<td><label id="email_label">$LABEL{'account_label'}</label> </td>
+						<td><input type="text" name="email" value="$ARTICLE{'account'}"/></td>
+						<td></td>
+					  </tr>					  
+					  <tr>
+						<td><label id="email_label">$LABEL{'date_expiration'}</label> </td>
+						<td><input type="text" name="email" value="$ARTICLE{'date_expiration'}"/></td>
+						<td></td>
+					  </tr>
+
+					</table>
+
+		        <input type="button" value="Fermer" onClick="window.close();"/>
+			    
+			</form>
+		
+	</div>
+ </div>
+</body>
+</html>

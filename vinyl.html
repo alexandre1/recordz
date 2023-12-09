@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<script language="javascript">
+		function go()
+		{
+			
+			box = document.select_wish.navi;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+	</script>
+</head>
+<body><div class="header"></div>
+<div class="conteneur">
+    <img src="http://djmarketplace.no-ip.biz/images/news.jpg"><marquee  direction="right" scrollamount="5" loop="infinite" onMouseOver="this.stop();" onMouseOut="this.start()" style="border:0px; border-style:dashed;border-color:#CC99CC;"><label></label></marquee>
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?action=viewbasket&amp;lang=$LANG&session=$SESSIONID;"class="menulink" class=&{ns4class}; >$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_newuser'}</a>$LINK{'admin'}</p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+		<div class="centre">
+			<fieldset>
+			   <form name="select_wish">
+					Depot : $SELECT{'depot'}<br /> <br />
+					$ARTICLE{'index_table'}<br />
+					$ARTICLE{'news'}				
+				</form>
+			</fieldset>
+		 </div>
+	</div>
+</body>
+		<p align="center">code &amp;&nbsp;design by <b>alexandre jaquet &copy; 2005 </b> using mod_perl &amp; xhtml</p>
+		<p align="center"><a href="mailto:alexjaquet@gmail.com">contact </a></p>
+</html>

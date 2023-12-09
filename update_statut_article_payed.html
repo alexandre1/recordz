@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+   			if (document.select_wish.payed) {
+				payed_value = '1';
+			}else {
+				payed_value = '0';
+			}
+		
+	        url = url  + '&article=' + $ARTICLE{'id_article'} + '&payed=' + payed_value + '&u=$u&id_a_paye=$ARTICLE{'id_a_paye'}'  ;
+
+			opener.location.href = url;
+		}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/update_article_statut.pl?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="doupdatestatutarticle">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		$ARTICLE{'paypal'}
+		<input type="hidden" name="id_a_paye" value="$ARTICLE{'id_a_paye'}"/>
+	<table>
+	<tr>
+		<td>Num&eacute;ro iban</td><td><input type="text"  style="width:250px" disabled="true" name="iban"/ value="$ARTICLE{'iban'}"></td>
+	</tr>
+	<tr>
+		<td>Payez via Paypal.me</td><td><input type="button"  value="Clickez" onClick="window.open('https://www.paypal.me/$ARTICLE{'paypal'}/$ARTICLE{'montant'}CHF','windowName','height=900,width=750');"></td>
+	</tr>
+	
+	<tr>
+		<td>Signalé que vous avez payé</td><td><input type="checkbox" name="payed"></td>
+	</tr>	
+	</tr>
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/update_article_statut.pl?lang=$LANG&session=$SESSIONID&action=doupdatestatutarticleispayed&id_a_paye=$ARTICLE{'id_a_paye'}',true,0500)" value="Mise à jour">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

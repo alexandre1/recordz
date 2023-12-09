@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body><div class="header"></div>
+
+<div class="conteneur">
+    <img src="http://djmarketplace.no-ip.biz/images/news.jpg"><marquee  direction="right" scrollamount="5" loop="infinite" onMouseOver="this.stop();" onMouseOut="this.start()" style="border:0px; border-style:dashed;border-color:#CC99CC;"><label>$ARTICLE{'week_news'}</label></marquee>
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?action=viewbasket&amp;lang=$LANG&session=$SESSIONID;"class="menulink" class=&{ns4class}; >$LABEL{'label_menu_basket'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register&session=$SESSIONID;" class="menulink" class=&{ns4class};>$LABEL{'label_menu_newuser'}</a>$LINK{'admin'}</p>
+    <div id="search_box" style="margin:10px">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="$LANG" />
+			<input type="hidden" name="session" value="$SESSIONID"/>
+			<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+			<input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+   </div>
+	<div id="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<div class="centre">
+		<fieldset>
+			 $BASKET{'command'} <br />
+			 <a href="/cgi-bin/recordz.cgi?lang=$LANG&action=command&idcommand&&session=$SESSIONID">Commander</a>
+		</fieldset>
+	</div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+	<head>
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+		
+		function toggle(id)	{
+			el = document.getElementById(id);
+			var display = el.style.display ? '' : 'none';
+			el.style.display = display;
+		}
+	</script>
+	
+	</head>
+	<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+	<form name="form">
+		<a href="#" onClick="toggle('how_to_deal');">$LABEL{'how_to_deal'}</a><br />
+		<a href="#" onClick="toggle('how_to_buy');">$LABEL{'how_to_buy_an_enchere'}</a><br />
+		<a href="#" onClick="toggle('how_to_buy');">$LABEL{'how_to_buy'}</a><br />
+		<div id="how_to_deal" class="how_to_deal" style="display:none">
+			1) $LABEL{'deal1'}<br/>
+			2) $LABEL{'deal2'}<br/>
+			3) $LABEL{'deal3'}<br/>
+		</div>
+		<div id="how_to_buy" class="how_to_buy" style="display:none">
+			1) $LABEL{'deal1'}<br/>
+			2) $LABEL{'buy1'}
+		</div>
+		<div id="how_to_buy" class="how_to_buy" style="display:none">
+			1) $LABEL{'deal1'}<br/>
+			2) $LABEL{'buy1'}
+		</div>
+
+	</form>
+	</body>
+</html>

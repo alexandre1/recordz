@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<style>
+  .button {border-radius: 12px;}
+</style>
+
+</head>
+<body><div class="header2">
+    
+</div><div class="header"></div>
+<div class="conteneur">
+<br />
+<!--<img src="../images/fr.gif" height="13px" width="19px" alt="french" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&amp;session=$SESSIONID&page=myaccount'"/>&nbsp;<!--<img src="../images/en.png" height="15px" width="19px" alt="english" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&amp;session=$SESSIONID&page=myaccount'"/>&nbsp;<img src="../images/de.gif" height="13px" width="19px" alt="german" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&amp;session=$SESSIONID&page=myaccount'"/>&nbsp;<img src="../images/it.gif" alt="italian" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&amp;session=$SESSIONID&page=myaccount'"/>-->
+<p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;action=register&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/dosearch.pl?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="u" value="$u" />
+		<input type="hidden" name="p" value="$p" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" style="border-radius: 12px;"/>&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<div class="centre">
+	    <br/>
+		<fieldset>
+			<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=personal_data&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'personal_data'}</a><a href="/cgi-bin/my_auctions.pl?lang=$LANG&amp;page=myench
+			&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'my_enchere'}</a>&nbsp;<a href="/cgi-bin/add_other.pl?lang=$LANG&amp;page=add_other&session=$SESSIONID&u=$u" class="menulink" class=&{ns4class};>$LABEL{'vinyl_add_one'}</a>&nbsp;<a href="/cgi-bin/advertise.pl?lang=$LANG&amp;page=advertise&u=$u" class="menulink" class=&{ns4class};>$LABEL{'advertise'}</a>
+		</fieldset>
+
+	</div>
+	</div>
+</body>
+</html>

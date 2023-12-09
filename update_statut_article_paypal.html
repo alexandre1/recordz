@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+   			if (document.select_wish.payed) {
+				payed_value = '1';
+			}else {
+				payed_value = '0';
+			}
+
+	        url = url  + '&article=' + $ARTICLE{'id_article'} + '&payed=' + payed_value;
+			opener.location.href = url;
+		}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<table>
+	<tr><td>$LABEL{'montant'}</td><td><inpOut type="text" value="$ARTICLE{'register_amount'}"></td></tr>	
+	<tr><td>$LABEL{'name'}</td><td><input type="text" value="$ARTICLE{'register_itemname'}"></td></tr>	
+	<tr>
+			<FORM ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="POST">
+			<INPUT TYPE="hidden" NAME="cmd" VALUE="_ext-enter">
+			<INPUT TYPE="hidden" NAME="redirect_cmd" VALUE="_xclick">
+			<INPUT TYPE="hidden" NAME="business" VALUE="alexjaquet@gmail.com">
+          		<INPUT TYPE="hidden" NAME="undefined_quantity" VALUE="1">
+                       <INPUT TYPE="hidden" NAME="item_name" VALUE="$ARTICLE{'register_itemname'}">
+			<INPUT TYPE="hidden" NAME="item_number" VALUE="$ARTICLE{'register_id'}">
+			<INPUT TYPE="hidden" NAME="amount" VALUE="$ARTICLE{'register_amount'}">
+			<INPUT TYPE="hidden" NAME="currency_code" VALUE="EUR">
+			<INPUT TYPE="hidden" NAME="first_name" VALUE="$ARTICLE{'register_firstname'}">
+			<INPUT TYPE="hidden" NAME="last_name" VALUE="$ARTICLE{'register_lastname'}">
+			<INPUT TYPE="hidden" NAME="address1" VALUE="$ARTICLE{'register_adress'}">
+			<INPUT TYPE="hidden" NAME="city" VALUE="$ARTICLE{'register_city'}">
+			<input type="hidden" name="return" value="$URL">
+			<input type="hidden" name="cancel_return" value="http://avant-garde.no-ip.biz/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=payed_cancel&username=$ARTICLE{'register_username'}">
+			<INPUT TYPE="hidden" NAME="zip" VALUE="$ARTICLE{'register_npa'}">
+			<INPUT TYPE="hidden" NAME="lc" VALUE="CH">
+			<INPUT TYPE="hidden" NAME="email" VALUE="$ARTICLE{'register_email'}">
+			<INPUT TYPE="hidden" NAME="night_phone_a" VALUE="41">
+			<INPUT TYPE="hidden" NAME="night_phone_b" VALUE="$ARTICLE{'register_phone'}">
+
+			<td><INPUT TYPE="image" SRC="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" BORDER="0" NAME="submit" ALT="Make payments with PayPal - it's fast, free and secure!" width="50" height="50"></td>
+			</FORM>				
+	</tr>
+	</table>
+	<table>
+		<tr><td></td><input type="button" onClick="window.close();" value="Fermer"></td></tr>
+	</table>
+</body>
+</html>

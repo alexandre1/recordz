@@ -1,0 +1,149 @@
+<html>
+<head>
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+</script>
+</head>
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br>
+<table border="0" cellpadding="1" cellspacing="0" width=100%>
+<form action="/cgi-bin/ask_visit_action.pl" method="POST" name="askvisit">
+<input type="hidden" name="session" value="$SESSIONID">
+<input type="hidden" name="lang" value="$LANG">
+<input type="hidden" name="article" value="$ARTICLE{'id_article'}">
+<input type="hidden" name="person_id" value="$ARTICLE{'ref_person'}">
+<input type="hidden" name="action" value="askvisit">
+<tr>			
+	<td bgcolor="#ffffff">
+	<br>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td colspan="2"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td width="100%">$LABEL{'contact_me'}:</b></font></td>
+	</tr>
+	<tr>
+	<td width="100%" height="2"></td></tr>
+	<tr>
+		<td width="100%" height="2" bgcolor="#66FFFF"></td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+	</table>
+
+</td>
+	<tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="checkbox"  style=" border-width:thin; border-bottom-width:0px" selected name="form_par_email" VALUE="1" checked><font face="verdana,arial,helvetica,sans-serif" size="2">E-mail</font></td>
+	</tr>
+	<tr>
+
+		<td colspan="2"><input type="checkbox" style=" border-width:thin; border-bottom-width:0px"  selected name="form_par_mobile" VALUE="1"><font face="verdana,arial,helvetica,sans-serif" size="2">Mobile</font></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="checkbox" style=" border-width:thin;"  selected name="form_par_phone" VALUE="1"><font face="verdana,arial,helvetica,sans-serif" size="2">T&eacute;l&eacute;phone</font></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td width="100%">$LABEL{'mydatas'}</td>
+	</tr>
+		<tr><td width="100%" height="2"></td>
+	</tr>
+	<tr>
+		<td width="100%" height="2" bgcolor="#66FFFF"></td>
+	</tr>
+
+<tr><td colspan="3"><img src="../images/nbsp.gif" width="1" height="8" border="0"></td></tr></table>
+<br>
+	<font face="verdana,arial,helvetica,sans-serif" size="1">(champs obligatoires)*</font>
+	</td>
+	<tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>		
+	<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">Nom/Pr&eacute;nom*</font></td>
+		<td>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><input class="input2" type="text" maxLength="100" name="person_name" value="" size="7"></td>
+			<td>&nbsp;/&nbsp;</td>
+
+			<td><input class="input3" type="text" maxLength="100" name="firstname" value="" size="9"></td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">E-mail*</font></td>
+		<td><input class="input1" type="text" maxLength="100" name="email" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">Adresse*</font></td>
+		<td><input class="input1" type="text" maxLength="100" name="adress" value="" size="20"></td>
+
+	</tr>
+	<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">NPA/Ville*</font></td>
+		<td>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><input class="input4" type="text" maxLength="20" name="npa" value="" size="4"></td>
+			<td>&nbsp;/&nbsp;</td>
+
+			<td><input class="input5" type="text" maxLength="100" name="city" value="" size="12"></td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+		<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">T&eacute;l. priv&eacute;</font></td>
+		<td><input class="input1" type="text" maxLength="50" name="tel_private" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td><font face="verdana,arial,helvetica,sans-serif" size="2">Mobile</font></td>
+
+		<td><input class="input1" type="text" maxLength="50" name="tel_natel" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td valign="top"><font face="verdana,arial,helvetica,sans-serif" size="2">Remarques</font></td>
+		<td><textarea class="input1" cols="21" rows="5" name="comment"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="submit" value="Valider"></td><td><input type="button" onClick="window.close();" value="Fermer"></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

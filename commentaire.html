@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script src="/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="/ckeditor/sample.css">
+
+</head>
+<body>
+<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=addcomment&session=$SESSIONID" method="post">
+<input type="hidden" name="lang" value="$LANG">
+<input type="hidden" name="action" value="addquestion">
+<input type="hidden" name="article" value="$ARTICLE{'id_article'}">
+<input type="hidden" name="session" value="$SESSIONID">
+<input type="hidden" name="capmd5" value=$image/>
+<br/><br/><br/>
+<table>
+  <tr>
+      <td><label id="email_label">$LABEL{'login_username_label'}</label> </td>
+      <td><input type="text" name="user_name" value=""/></td>
+      <td></td>
+      </tr>					  
+      <tr>
+         <td><label id="password_label">$LABEL{'login_password_label'}</label></td>
+         <td><input type="password" name="user_password" value=""/></td>
+      </td>
+      </tr>
+      <tr>
+	 <td>$LABEL{'copy_the_code'}</td><td><img src="../upload/$image.png"></img></td><td><input type="text" name="inline"></input></td>
+	<tr>
+	   <td><a href="#" onclick="document.location.reload(true)">Reload Image</a>
+	</td>
+      </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td height="24">Titre de la question <input type="text" name="text"></td>
+  </tr>
+</table> 
+<table>   <td><div align="right">
+<tr>
+  <td>
+    <textarea class="ckeditor" name="editor1" cols="420"></textarea>		
+  </td>
+</tr>
+      <input type="submit" name="Submit" value="Submit">
+    </div></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

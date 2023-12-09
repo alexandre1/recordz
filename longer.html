@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.account_type;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go2()
+		{
+			
+			box = document.select_wish.time;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+		
+		function openPopUp() {
+			box = document.select_wish.time;
+			value = box.options[box.selectedIndex].value;
+			box2 = document.select_wish.account_type;
+			value2 = box2.options[box2.selectedIndex].value;
+			window.open('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&page=longerupdate&lang=$LANG&u=$u&time=' + value + '&account_type=' + value2,'MySearchWindow2','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=490,height=200,left=0,top=0');
+		}
+		function Lvl_P2P(url,closeIt,delay){
+			date_end_value = this.document.select_wish.date_end.value;
+			if (this.document.select_wish.account_type) {
+				box = document.select_wish.account_type;		
+				account_value = box.options[box.selectedIndex].value;					
+			}													
+			if (this.document.select_wish.price) {
+				price_value = this.document.select_wish.price.value;			
+			}
+			opener.location.href = url + '&date_end=' + date_end_value + '&account_type=' + account_value + '&price=' + price_value;
+	}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?" method="post">
+		<input type="hidden" name="action" value="doupdatelonger">
+		<input type="hidden" name="lang" value="$LANG">		  
+		<input type="hidden" name="date_start" value="$SELECT{'date_start'}"/>
+	<table>
+	<tr>				
+	   <td>$LABEL{'personal_data'}</td><td><select name="account_type" onchange="go();">$OPTIONS{'cat'}</select></td>
+	   <tr><td>$LABEL{'date_debut'}</td><td><input type="text" name"date_start" value="$SELECT{'date_start'}"></td></tr>
+	<td>$LABEL{'nbr_mois'}</td><td><select name="time" onchange="go2()">$OPTIONS{'time'}</select></td>
+	  <tr>
+		<td><label id="email_label">$LABEL{'date_expiration_end'}</label> </td>
+		<td><input type="text" name="date_end" value="$SELECT{'date_end'}"/></td>
+		<td></td>
+	  </tr>
+	$VALUE{'price'}"
+	</tr>	
+	<tr>
+	</tr>
+
+	</tr>
+	</table>
+	<br/>	<br/>
+	<input type="button"  onClick="openPopUp()" value="Sauvegarder">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>
+;

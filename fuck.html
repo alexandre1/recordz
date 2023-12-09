@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function go()
+	{
+		
+		box = document.select_wish.navi;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+	function ench () {
+		montant = document.select_wish.encherepriceprice.value;
+		location.href = '/cgi-bin/recordz.cgi?lang=fr&session=5092824be01ba9cce9c735523c91912b&action=enchere&article=47&encherepriceprice=' + montant;
+	}
+
+   function Lvl_P2P(url,closeIt,delay){
+	    if (document.select_wish.quantity_wanted) {
+			quantity_value = document.select_wish.quantity_wanted.value;
+		    location.href = url + '&quantity=' + quantity_value + '&article=47';
+			opener.location.href = url;
+		}
+	}
+
+</script>
+
+</head>
+<body><div class="header"></div>
+<div class="conteneur">
+<br />
+    <img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47'">&nbsp;<img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47'">
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=fr&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>Home
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=myaccount&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>Mon Compte
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=login&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>Login
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=register&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>Nouvel utilisateur
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=about&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>A propos
+</a></p>
+    <div id="search_box">
+		<form id="search_form" action="/cgi-bin/recordz.cgi?lang=fr&amp;action=search&session=5092824be01ba9cce9c735523c91912b" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="fr" />
+			<input type="hidden" name="session" value="5092824be01ba9cce9c735523c91912b"/>
+			<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">Nom
+</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories"><option>Toutes les catégories
+</option><option>automobile</option><option>cd</option><option>habits femme</option><option>habits homme</option><option>immobilier</option><option>informatique</option><option>mix tape</option><option>montres et bijoux femme</option><option>montres et bijoux homme</option><option>natel</option><option>tv / vidéo</option><option>vins</option><option>vinyl</option></select>
+			<input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+	</div>
+	<div id="list-menu">
+		<ul style="float:left;">
+			<img src="../images/border_top_left.gif"><img src="../images/border_top_middle.gif" width="100" height="10"><img src="../images/border_top_right.gif"><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=auto&amp;type=8&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Automobilie
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=immo&amp;type=6&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Immobilier
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Fashion
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=watch&amp;session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Montres et bijoux
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=wine&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Vins
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=tv_video&amp;type=6&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>Tv / vidéo / photos
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=informatique&amp;&session=5092824be01ba9cce9c735523c91912b;" class="menulink" class=&{ns4class};>Informatique
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=cd_vinyl_mixtap&session=5092824be01ba9cce9c735523c91912b" class="menulink" class=&{ns4class};>CD / Music / Mix tape
+</a></li><br/><img src="../images/border_bottom_left.gif"><img src="../images/border_bottom_middle.gif" width="100" height="10"><img src="../images/border_bottom_right.gif">
+		</ul>
+	</div>
+	<div class="centre">
+	<img src="../images/detail_fr.gif" width="300px" height="60px"><img src="../upload/thumb.47.jpg" width="50px" height="37px" border="1" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&action=show_image&amp;image=47','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="../upload/thumb.47.2.jpg" border="1" width="50px" height="37px" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&action=show_image2&amp;image=47.2.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="../upload/thumb.47.3.jpg" border="1" width="50px" height="37px" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&action=show_image2&amp;image=47.3.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">&nbsp;<img src="../upload/thumb.47.4.jpg" border="1" width="50px" height="37px" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&action=show_image2&amp;image=47.4.jpg','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=750,height=385,left=20,top=20')">
+		<fieldset>
+		<form name="select_wish" action="/cgi-bin/recordz.cgi">
+		<input type="hidden" name"id_article" value="47"/>
+		<input type="hidden" name="lang" value="fr" />
+		<input type="hidden" name="action" value="add_other" />
+		<input type="hidden" name="session" value="5092824be01ba9cce9c735523c91912b"/>	
+			<table>
+			  <tr>
+				<td><label id="label_category_name">Catégorie</label></td>			
+				<td><input type="text" name="category" value="montres et bijoux homme"></td>
+				<td width="200"><label id="label_category_name">Nbr vues </label></td>			
+				<td><label id="label_category_name"><input type="text" value="7"></td>			
+			  </tr>
+  			  <tr>
+				<td><label id="label_price">Vendeur</label></td>
+				<td><a href="/cgi-bin/recordz.cgi?lang=fr&session=5092824be01ba9cce9c735523c91912b&page=profil_vendeur&username=alexandre" class="menulink" class=&{ns4class};>alexandre</a><img src="../images/anime_star.gif"></td>
+					
+			  </tr>
+			  <tr>
+				<td><label id="label_article_name">Nom</label></td>
+				<td><input type="text" name="name" value="J007634205"></td>
+					
+			  </tr>
+  			    
+			    <tr><td>Quantité</td><td><input type="text" name="quantity" value="1"></td></tr>
+				<tr><td>Fabricant</td><td><input type="text"  name="fabricant" value="Jaquet-Droz"></td></tr>
+				
+				
+			  <tr>
+				  <td></td>
+				  <td></td>
+				<td width="200" ><label id="label_category_name">Fin de l'annonce </label></td>			
+				<td><input type="text" value="2005-09-30 07:26:05"></td>			
+			  </tr>
+			  <tr>
+				<td><label id="label_price">Prix</label></td>
+				<td><input type="text" name="price" value="41000"></td>
+				<td width="200px"><label>Temps restant</label></td>
+				<td><input type="text" name="price" value="-21 J -21 H -6 M -45 Sec"></td>								
+			  </tr>
+			  <tr>
+			<td></td><td></td><td width="200px">Liste des derniers acheteurs</td>
+			<td><a href="#" onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&page=last_buyers&amp;article=47','MyWindow3','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=530,height=285,left=20,top=20')" class="menulink" class=&{ns4class};>Voir
+</a></td></tr>
+			 <td></td>
+			 </tr>		
+				
+			    
+				<tr><td>Quantité voulue</td><td><input type="text" name="quantity_wanted"></td></tr>
+			</table>
+				<a href="#" onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=fr&session=5092824be01ba9cce9c735523c91912b&action=addtobasket&article=47',true,0500)" class="menulink" class=&{ns4class};>Payement direct
+</a>&nbsp;<br /><br />
+			<table style="background-color:#CCCCFF ">
+					<table">
+    <tbody>
+        <tr>
+            <td width="574" height="1">           <hr align="center" />
+            <p><font size="4"><b>Model: </b></font><font size="3">J007634205</font></p>
+            <p><strong><font size="4">Description:</font></strong>&nbsp; Chrono           Monopoussoir with an Adventurine and guillioche dial.&nbsp;&nbsp; <a href="http://www.armstrongrockwell.com/pics/Adventurineb.jpg">Display           Back</a>, 43mm case on black alligator strap with a tang           buckle.&nbsp;&nbsp;Limited edition watch&nbsp; 3 out of 8. Additional <a href="http://www.armstrongrockwell.com/pics/Adventurines.jpg">Dial&nbsp;</a>           Picture.&nbsp;</p>
+            <p><font size="4"><strong>List Price: </strong></font><font size="3">$</font>31,200.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+This is some sample text.<br/>
+			</table>
+		  <br/>		  <br/>
+		   <a href="/cgi-bin/recordz.cgi?lang=FR&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47&viewcommentaire=0" class="menulink" class=&{ns4class};>Masquer les questions
+</a>&nbsp;&nbsp;<a href="/cgi-bin/recordz.cgi?lang=FR&session=5092824be01ba9cce9c735523c91912b&action=detailother&article=47&viewcommentaire=1" class="menulink" class=&{ns4class};>Montrer les questions
+</a>&nbsp;&nbsp;<a href="" class="menulink" class=&{ns4class}; onclick="window.open('/cgi-bin/recordz.cgi?lang=fr&amp;session=5092824be01ba9cce9c735523c91912b&page=commentaire&amp;article=47','MyWindow3','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=530,height=485,left=20,top=20')">Insérer une question
+</a><br/>
+  		   <br />			¨
+		   
+		</form>
+  		</fieldset>			
+	</div>
+ </div>
+</body>
+</html>

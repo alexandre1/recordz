@@ -1,0 +1,72 @@
+<html lang="fr"> <head> <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> <title>Gmail</title> <link rel="alternate" type="application/atom+xml" title="Gmail Atom Feed" href="feed/atom" /><script src=""></script> </head> <noscript><font face=arial>JavaScript doit être activé pour utiliser Gmail avec le mode d'affichage standard. Il semble que ce langage soit désactivé ou qu'il ne soit pas pris en charge dans votre navigateur. Pour utiliser l'affichage en mode standard, activez les scripts JavaScript en changeant les options de votre navigateur et <a href="">essayez</a> de nouveau. <p>Pour utiliser le mode d'affichage HTML simplifié de Gmail, qui ne nécessite pas les scripts JavaScript, cliquez <a href="">sur ce lien</a>.</p></font><p><font face=arial>Pour afficher Gmail sur un téléphone portable ou un périphérique similaire, <a href="">cliquez ici</a>.</font></p></noscript> <script>
+<!--
+
+var fs_time=(new Date()).getTime();
+
+
+
+
+function wfs() {
+
+
+try {
+if (parent!=window && parent.wfs) {
+return false;
+}
+}catch(e){}
+
+
+
+if (top.location.href.indexOf('nocheckbrowser')!=-1) {
+return true;
+}
+
+
+
+
+if (!is_browser_supported) {
+top.location="?ui=html&zy=j";
+return false;
+}
+
+
+var testcookie='jscookietest=valid';
+document.cookie=testcookie;
+if (document.cookie.indexOf(testcookie)==-1) {
+top.location="html\x2Ffr\x2Fnocookies.html";
+return false;
+}
+
+document.cookie=testcookie+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+
+var agt=navigator.userAgent.toLowerCase();
+
+
+if (agt.indexOf('msie')!=-1 && document.all &&
+agt.indexOf('opera')==-1 && agt.indexOf('mac')==-1) {
+
+
+eval('var c=(agt.indexOf("msie 5")!=-1)?"Microsoft.XMLHTTP":"Msxml2.XMLHTTP";try{new ActiveXObject(c);}catch(e){top.location="html\x2Ffr\x2Fnoactivex.html";}');
+}
+
+
+return true;
+
+}
+
+function lj() {
+
+js.location.replace("?view=page&name=js&ver=a193109e2e607159");
+
+}
+
+
+if (wfs()) {
+
+
+document.write('<frameset onload=lj() rows="100%,*" border=0><frame name=main src="?view=page&amp;name=loading&amp;ver=3740cb1897a824a8" frameborder=0 noresize scrolling=no><frame name=js src="?view=page&amp;name=loading&amp;ver=3740cb1897a824a8" frameborder=0 noresize></frameset>');
+}
+-->
+
+</script> </html>

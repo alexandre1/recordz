@@ -1,0 +1,276 @@
+
+/* CSS Document */
+
+
+body{
+    margin:0;
+    background: url(../images/test4.jpg) top left no-repeat;
+    font-size:80%;
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#0B06E2;
+
+}
+.header{
+    background: url(../images/test4.jpg) top left no-repeat;
+    width:100%;
+/*  height:1000px;*/
+    padding:0;
+}
+
+
+
+
+rigth-pub {
+   margin-right:600px;
+}
+select {
+    border-style:inset;
+    border-color:#94CEFA;
+    color:#0066CC;
+    width:150px;
+    background-color:#FFFFFF;
+    font-weight:500;
+}
+
+textarea {
+    border-style:dotted;
+    border-color:#94CEFA;
+    color:#0B06E2;
+    background-color:#FFFFFF;
+    font-weight:500;
+}
+
+input {
+    border-style:solid;
+    border-color:#9503FC;
+    color:#0B06E2;
+    width:150px;
+    background-color:#FFFFFF;
+    font-weight:500;
+}
+.conteneur{
+    background: url(../images/super.jpg) no-repeat;
+    margin-left:auto;
+    margin-right:auto;
+    width:800px;
+    text-align:justify;
+    height:1008px;
+}
+
+.search_box {
+ background-image:url(images/HPX4000_medium.jpg) no-repeat center; 
+}
+.input_left {
+    margin-right:20px;
+}
+
+dl{
+    background:url(../images/newcase.jpg) no-repeat;
+    border-color:#00CCFF;
+    border-style:dashed;
+    border-width:thin;
+    width:223px;
+    height:77px;
+    overflow:hidden;
+    font-size:0.9em;
+    padding: 8px 0 0 0;
+}
+
+.dl_table_mix{
+    background:url(../images/table.jpg) no-repeat;
+    width:223px;
+    height:89px;
+    overflow:hidden;
+    font-size:0.9em;
+    padding: 8px 0 0 0;
+}
+
+.dl_platine{
+    background:url(../images/platine.jpg) no-repeat;
+    width:223px;
+    height:89px;
+    overflow:hidden;
+    font-size:0.9em;
+    padding: 8px 0 0 0;
+}
+
+.dd_table_mix{
+    margin:0;
+    padding-left:60px;
+}
+
+.bulle {
+    padding-left:86px;
+}x
+
+dt{
+    font-weight:bold;
+    margin:0;
+}
+dt img{
+    float:left;
+    margin-top:-17px;
+    padding-left:5px;
+}
+dd{
+    margin:0;
+    padding:0;
+}
+
+fieldset {
+    border:0px solid black;
+}
+hr {
+ color:#D5E1FC;
+ background-color: #D5E1FC;
+ height: 5px;
+}
+
+ul{
+    list-style:none;
+    padding:10px;
+    margin:10px;
+    font-size:15px;
+    border-width:thick;
+    border-style:solid;
+    border-color:#94CEFA;
+}
+
+li{
+    padding : 4px 0;
+    color:#FF324B;
+    font-weight:bold;
+        font-size:15px;
+/*  font-size:1.2em;*/
+}
+A.menulink {
+    display: inline;
+    background:url(../images/menu_back.jpg);       
+    width: 98px;
+    height:13px;
+    text-align: left;
+    text-decoration: none;
+    font-family:arial;
+    font-size:15px;
+    color: #0B06E2;
+    border: solid 1px #FFFFFF;
+}
+
+A.menulink:hover {
+    border: solid 1px #6100C1;
+    background-color:#F0E1FF;
+}
+
+
+A.menulink2 {
+    display: inline;
+    width: 98px;
+    text-align: left;
+    text-decoration: none;
+    font-family:"Courier New", Courier, mono;
+    font-size:15px;
+    color: #0B06E2;
+    border: solid 1px #FFFFFF;
+}
+
+A.menulink2:hover {
+    border: solid 1px #6100C1;
+    background-color:#F0E1FF;
+    color:#666666;
+}
+A.menulink {
+    display:inline;
+    background:url(../images/menu_back.jpg);            
+    border-style:dotted;border-width:1px;border-color:#94CEFA
+    width: 68px;
+    height:10px;
+    text-align: center;
+    text-decoration: none;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size:15px;
+    color: #0B06E2;
+    border: solid 1px #FFFFFF;
+}
+
+A.menulink:hover {
+    border: solid 1px #6100C1;
+    background-color:#F0E1FF;
+}
+.content {
+  float: left;
+  width: 70%;
+}
+.menu {
+  margin-left: 80%;
+  border: 1px solid #000000;
+  padding: 1em;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<script type="application/x-javascript">
+var panes = new Array();
+
+function setupPanes(containerId, defaultTabId) {
+  // go through the DOM, find each tab-container
+  // set up the panes array with named panes
+  // find the max height, set tab-panes to that height
+  panes[containerId] = new Array();
+  var maxHeight = 0; var maxWidth = 0;
+  var container = document.getElementById(containerId);
+  var paneContainer = container.getElementsByTagName("div")[0];
+  var paneList = paneContainer.childNodes;
+  for (var i=0; i < paneList.length; i++ ) {
+    var pane = paneList[i];
+    if (pane.nodeType != 1) continue;
+    if (pane.offsetHeight > maxHeight) maxHeight = pane.offsetHeight;
+    if (pane.offsetWidth  > maxWidth ) maxWidth  = pane.offsetWidth;
+    panes[containerId][pane.id] = pane;
+    pane.style.display = "none";
+  }
+    paneContainer.style.height = maxHeight + "px";
+    paneContainer.style.width  = maxWidth + "px";
+    document.getElementById(defaultTabId).onclick();
+}
+
+function showPane(paneId, activeTab) {
+  // make tab active class
+  // hide other panes (siblings)
+  // make pane visible
+  
+    for (var con in panes) {
+    activeTab.blur();
+    activeTab.className = "tab-active";
+    if (panes[con][paneId] != null) { // tab and pane are members of this container
+      var pane = document.getElementById(paneId);
+      pane.style.display = "block";
+      var container = document.getElementById(con);
+      var tabs = container.getElementsByTagName("ul")[0];
+      var tabList = tabs.getElementsByTagName("a")
+      for (var i=0; i<tabList.length; i++ ) {
+        var tab = tabList[i];
+        if (tab != activeTab) tab.className = "tab-disabled";
+      }
+      for (var i in panes[con]) {
+        var pane = panes[con][i];
+        if (pane == undefined) continue;
+        if (pane.id == paneId) continue;
+        pane.style.display = "none"
+      }
+    }
+  }
+  return false;    
+}
+
+</script>
+
+</script>
+</head>
+<body onload='setupPanes("container1", "tab1");'><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+<!--    <img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID'">&nbsp;<img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID'">-->
+<p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;action=register&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+		<form id="search_form" action="/cgi-bin/dosearch.pl?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="search" />
+			<input type="hidden" name="lang" value="$LANG" />
+			<input type="hidden" name="session" value="$SESSIONID"/>
+			<img src="../images/atb_search.gif">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories2'}</select>
+			<input type="submit" value="Search" />
+		</fieldset>
+		</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<br/>
+		<div class="centre">
+		<fieldset>						   			
+		   <form name="select_wish">
+			<div class="preload" id="preload"><img alt="" src ="../images/vendeur_detail_$LANG.gif"></div>
+			<table style="border-radius: 25px;border: 2px solid #6100C1;padding: 20px;" width="555" border="0"><tr<td align="left" width=\"51\">
+
+			  <tr>
+				<td><label id="label_category_name">$LABEL{'dealer'}</label></td>			
+				<td><input type="text" name="dealer" value="$ARTICLE{'dealer'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+				<td><label id="label_category_name">Liste des derniers visiteurs</label></td>			
+        <td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&list=1" class="menulink" class=&{ns4class};>Clickez</label></td>
+			  </tr>
+
+  			  <tr>
+				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&enchere=1&vendu=0" class="menulink" class=&{ns4class};>$LABEL{'nbr_enchere_open'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'enchere_open_count'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&enchere=1&vendu=1" class="menulink" class=&{ns4class};>$LABEL{'nbr_enchere_closed'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'enchere_closed_count'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&enchere=0&vendu=0" class="menulink" class=&{ns4class};>$LABEL{'nbr_direct_deal_open'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'direct_deal_open'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&enchere=0&vendu=1" class="menulink" class=&{ns4class};>$LABEL{'nbr_direct_deal_closed'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'direct_deal_closed'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&option=evaldeal" class="menulink" class=&{ns4class};>$LABEL{'evaluation_deal'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'have_deal_count'}" readonly="true"></td>
+			  </tr>
+			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&option=evalbuy" class="menulink" class=&{ns4class};>$LABEL{'evaluation_buy'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'have_buy_count'}" readonly="true"></td>
+			  </tr>
+ 			  <tr>
+  				<td><label id="label_price"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&option=showbuyedarticle" class="menulink" class=&{ns4class};>$LABEL{'show_buy_article'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'counter_buy'}" readonly="true"></td>
+			  </tr>
+        <tr>
+  				<td><label id="label_comments"><a href="/cgi-bin/detail_dealer.pl?lang=$LANG&session=$SESSIONID&page=profil_vendeur&username=$ARTICLE{'dealer'}&option=viewcomments" class="menulink" class=&{ns4class};>$LABEL{'view_comments'}</label></td>
+				<td><input type="text" name="dealer" value="$ARTICLE{'counter_comments'}" readonly="true"></td>
+				</tr>
+			</table>
+			<br /><br />
+			$ARTICLE{'index'}<br />
+			$ARTICLE{'table'}
+			$ARTICLE{'show_article_index'}
+			$ARTICLE{'show_article_table'}
+ 			$ARTICLE{'evaldealview'}
+ 			$ARTICLE{'evaldealdeal'}
+			$ARTICLE{'evalarticleindex'}						
+			$ARTICLE{'evalarticletable'}						
+			$ARTICLE{'graphic_buy'}
+			$ARTICLE{'graphic_deal'}
+      $ARTICLE{'comment_index'}
+      $ARTICLE{'visiteur_index'}
+      $ARTICLE{'visiteur_table'}
+			$ARTICLE{'index'}<br />
+				</form>
+			</fieldset>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>Untitled Document</title>
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+	</script>
+</head>
+
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br /><br />
+<table>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="first_name_label">$LABEL{'username_label'}</label></td>
+	<td><input type="text" name="user_name"  width="180" value="$ARTICLE{'username'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="first_name_label">$LABEL{'first_name_label'}</label></td>
+	<td><input type="text" name="first_name" value="$ARTICLE{'firstname'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="name_label">$LABEL{'name_label'}</label></td>
+	<td><input type="text" name="name" value="$ARTICLE{'name'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="country_label">$LABEL{'country_label'}</label></td>
+	<td><input type="text" name="country" value="$ARTICLE{'country'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="adress_label">$LABEL{'adress_label'}</label></td>
+	<td><input type="text" name="adress_name" value="$ARTICLE{'adress'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="city_label">$LABEL{'city_label'}</label></td>
+	<td><input type="text" name="city" value="$ARTICLE{'city'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="npa_label">$LABEL{'npa_label'}</label></td>
+	<td><input type="text" name="npa" value="$ARTICLE{'npa'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="phone_number_label">$LABEL{'phone_number_label'}</label></td>
+	<td><input type="text" name="phone_number" value="$ARTICLE{'phone_number'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="email_label">$LABEL{'email_label'}</label> </td>
+	<td><input type="text" name="email" value="$ARTICLE{'email'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="email_label">$LABEL{'msn_messenger_label'}</label> </td>
+	<td><input type="text" name="msn_messenger" value="$ARTICLE{'msn'}"/></td>
+  </tr>
+  <tr>
+	<td>&nbsp;&nbsp;&nbsp;<label id="email_label">$LABEL{'skype_label'}</label> </td>
+	<td><input type="text" name="skype" value="$ARTICLE{'skype'}"/></td>
+  </tr>
+  </table>
+  <br />  <br />
+  <input type="button" onclick="window.close();" value="Fermer" />
+</body>
+</html>

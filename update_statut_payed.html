@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){
+			if (document.select_wish.deliver.checked) {
+				deliver_value = '1';
+			}else {
+				deliver_value = '0';
+			}
+		
+	        url = url  + '&deliver=' + deliver_value + '&article=' + $ARTICLE{'id_article'} + '&buyer=$ARTICLE{'buyer'}' + '&id_a_livre=$ARTICLE{'id_a_livre'}';
+			opener.location.href = url;
+		}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="doupdatestatutarticle">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+		<td>Modifié le statut en livré</td><td><input type="checkbox" name="deliver"></td>
+	</tr>	
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=doupdatestatutarticle',true,0500)" value="Mise à jour">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- pass an object to go will be better ...-->
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<script language="javascript">
+		function go()
+		{
+			
+			box = document.select_wish.navi;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+	</script>
+</head>
+<body><div class="header"><b> <font color="#FF0000">still under developpement, running on a very slow server</font> don't register yet!(use only french version translation are not complete)(I'm looking for investor)<font color="#FF0000">Articles are for demo purpose</font></b></div>
+<div class="conteneur">
+<br />
+    <img src="../images/uk.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID'">&nbsp;<img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=IT&session=$SESSIONID'">
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID;" class="menulink" class=&{ns4class};>Home
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=myaccount&session=$SESSIONID;" class="menulink" class=&{ns4class};>Mon Compte
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=login&session=$SESSIONID;" class="menulink" class=&{ns4class};>Login
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=register&session=$SESSIONID;" class="menulink" class=&{ns4class};>Nouvel utilisateur
+</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=about&session=$SESSIONID;" class="menulink" class=&{ns4class};>A propos
+</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/recordz.cgi?lang=fr&amp;action=search&session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="fr" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px">&nbsp;<label id="search_name_label">Nom
+</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories"><option>Toutes les catégories
+</option><option>automobile</option><option>cd</option><option>habits femme</option><option>habits homme</option><option>immobilier</option><option>informatique</option><option>mix tape</option><option>montres et bijoux femme</option><option>montres et bijoux homme</option><option>natel</option><option>tv / vidéo</option><option>vins</option><option>vinyl</option></select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div id="list-menu">
+		<ul style="float:left;">		
+			<img src="../images/bar2.gif"><img src="../images/bar2.gif"><img src="../images/bar2.gif"><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=auto&amp;type=8&session=$SESSIONID" class="menulink" class=&{ns4class};>Automobilie
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=immo&amp;type=6&session=$SESSIONID" class="menulink" class=&{ns4class};>Immobilier
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=wear_news&amp;type=6&session=$SESSIONID" class="menulink" class=&{ns4class};>Fashion
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=watch&amp;session=$SESSIONID" class="menulink" class=&{ns4class};>Montres et bijoux
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=wine&session=$SESSIONID" class="menulink" class=&{ns4class};>Vins
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=tv_video&amp;type=6&session=$SESSIONID" class="menulink" class=&{ns4class};>Tv / vidéo / photos
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&amp;page=informatique&amp;&session=$SESSIONID;" class="menulink" class=&{ns4class};>Informatique
+</a></li><li><a href="/cgi-bin/recordz.cgi?lang=fr&page=cd_vinyl_mixtap&session=$SESSIONID" class="menulink" class=&{ns4class};>CD / Music / Mix tape
+</a></li><br/><img src="../images/bar2.gif"><img src="../images/bar2.gif"><img src="../images/bar2.gif">
+		</ul>
+	</div>
+		<div class="centre">
+			   <form name="select_wish">
+			   <img src="../images/meilleures_offres_fr.gif"><br/>
+	    		    <a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=0&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-00-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=4&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-01-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=8&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-02-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=12&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-03-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=16&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-04-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=20&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-05-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=24&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-06-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=28&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-07-></a>&#160;&nbsp;<img src="../images/next2.gif"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index=32&amp;max_index=4&cat=&depot="  class="menulink2" class=&{ns4class};><-08-></a>&#160;&nbsp;<img src="../images/next2.gif">
+					<table style="border-top-width:medium;border-top-color:#94CEFA"><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=46" class="menulink" class=&{ns4class};>ROLEX *PRINCE* GOLD  </a><br/><img src="../upload/thumb.46.jpg" alt=""/> <img src="../images/new_article.gif" alt=""/><br/>1000 francs suisse <br/>2005-09-08 <br/></td><td align="left" width="10px"></td><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=47" class="menulink" class=&{ns4class};>J007634205 </a><br/><img src="../upload/thumb.47.jpg" alt=""/> <img src="../images/new_article.gif" alt=""/><br/>41000 francs suisse <br/>2005-09-08 <br/></td><td align="left" width="10px"></td></tr><tr></tr><tr></tr><tr><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=48" class="menulink" class=&{ns4class};> CARTIER DAMENARMBANDUHR TANK </a><br/><img src="../upload/thumb.48.jpg" alt=""/> <img src="../images/new_article.gif" alt=""/><br/>550 francs suisse <br/>2005-09-08 <br/></td><td align="left" width="10px"></td><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=41" class="menulink" class=&{ns4class};> 911 CARRERA 4 COUPE 996 </a><br/><img src="../upload/thumb.41.jpg" alt=""/> <img src="../images/blank.gif" alt=""/><br/>78000 francs suisse <br/>2005-09-06 <br/></td><td align="left" width="10px"></td></tr><tr></tr><tr></tr><tr></table><br />
+			   <img src="../images/notre_selection_fr.gif"><br />					
+					<a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;min_index_our_selection=0&amp;max_index_our_selection=4&cat=&depot="  class="menulink2" class=&{ns4class};><-00-></a>&#160;&nbsp;<img src="../images/next2.gif">
+					<table><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=4" class="menulink" class=&{ns4class};>Sony 107cm - KEP-42XS1</a><br/><img src="http://supermarket.no-ip.biz/upload/thumb.4.jpg"  alt=""/><br/>2000 francs suisse <br/></td><td align="left" width="10px"></td><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=6" class="menulink" class=&{ns4class};>Superbe villa construction neuve</a><br/><img src="http://supermarket.no-ip.biz/upload/thumb.6.jpg" Belfaux  alt=""/><br/>429300 francs suisse <br/></td><td align="left" width="10px"></td></tr><tr></tr><tr></tr><tr><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=7" class="menulink" class=&{ns4class};>spacieux 5 pièces proche gare</a><br/><img src="http://supermarket.no-ip.biz/upload/thumb.7.jpg" Fribourg alt=""/><br/>2500 francs suisse <br/></td><td align="left" width="10px"></td><td align="left" width="250px" height="100px" style="border-style:dotted;background-image:url(../images/test2.gif);background-position:right bottom;background-repeat: no-repeat; border-width:thin;border-top-style:solid;border-top-width:medium;border-color:#94CEFA"><a href="/cgi-bin/recordz.cgi?lang=fr&session=$SESSIONID&amp;action=detailother&amp;article=12" class="menulink" class=&{ns4class};>HP Compaq nc4000</a><br/><img src="http://supermarket.no-ip.biz/upload/thumb.12.jpg"  alt=""/><br/>2200 francs suisse <br/></td><td align="left" width="10px"></td></tr><tr></tr><tr></tr><tr></table>
+			   <img src="../images/last_hour_fr.gif"><br />									
+					<table></table>
+   			   </form>
+		 </div>
+	</div>
+</body>
+</html>

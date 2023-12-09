@@ -1,0 +1,75 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Supermarket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="$LABEL{'index_title'}" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  color: #0B06E2;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #0B06E2;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+</style>
+
+
+<script language="javascript">
+    function highLigth (x) {
+		  x.style.background="url('../images/table_item_on.gif') top left no-repeat";
+    }
+    function highLigthOut (x) {
+		  x.style.backgroundColor="white";
+    }
+		
+	</script>
+</head>
+<body><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+
+    <p style="margin:10px"><a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;session=$SESSIONID&page=main;" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=login&amp;session=$SESSIONID" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=register&amp;session=$SESSIONID;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=about&amp;session=$SESSIONID;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarif&amp;session=$SESSIONID;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&amp;session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<input type="hidden" name="u" value="$u"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px" alt="search"/>&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" />&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />&nbsp;<a href="#" class="menulink"  onclick="window.open('/cgi-bin/recordz.cgi?lang=$LANG&amp;page=preferences&amp;session=$SESSIONID;','MySearchWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=890,height=240,left=0,top=0')">$LABEL{'preferences'}</a>
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<div class="centre">	
+		<fieldset>
+		<form name="select_wish">
+				<div class="pagination">$ARTICLE{'index_table'}</div> <br /> <br />
+			$ARTICLE{'search'}
+    	</form>
+		</fieldset>
+	</div>
+</div>
+</body>
+</html>

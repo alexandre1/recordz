@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>$LABEL{'index_title'}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  color: #0B06E2;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #0B06E2;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+</style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 520px;
+  padding: 10px;
+  background-color: white;
+  border-style: groove;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password],.form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+</style>
+
+<script language="javascript">
+	function go()
+	{
+		
+		box = document.select_wish.country;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+
+	function go2()
+	{
+		
+		box = document.select_wish.wine_type;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+
+	function go3()
+	{
+		
+		box = document.select_wish.cepage;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+	
+	function go4()
+	{
+		
+		box = document.myForm.country;
+		destination = box.options[box.selectedIndex].value;
+		if (destination) location.href = destination;
+	}
+	    
+    function openForm() {
+	    document.getElementById("myForm").style.display = "$ARTICLE{'show'}";
+	    
+    }
+
+    function openFormFirstTime() {
+	    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+	    document.getElementById("myForm").style.display = "none";
+    }
+
+	    
+	
+
+</script>
+
+</head>
+<body onload="openForm();"><div class="header2"></div><div class="header"></div>
+<div class="conteneur">
+<br />
+<!--    <img src="../images/fr.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=FR&session=$SESSIONID&page=wine'">&nbsp;<img src="../images/en.png" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&page=wine'">&nbsp;<img src="../images/de.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=DE&session=$SESSIONID&page=wine'">&nbsp;<img src="../images/it.gif" height="13px" width="19px" onclick="location.href='/cgi-bin/recordz.cgi?lang=EN&session=$SESSIONID&page=wine'">-->
+<p style="margin:10px"><a href="/cgi-bin/main.pl?min_index=0&max_index=40&index_page=1&page=main&lang=$LANG" class="menulink">$LABEL{'label_menu_home'}</a>&nbsp;<a href="/cgi-bin/personal_data.pl?lang=$LANG&amp;page=myaccount&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_account'}</a>&nbsp;<a href="/cgi-bin/login.pl?lang=$LANG&amp;page=login&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_login'}</a>&nbsp;<a href="/cgi-bin/register.pl?lang=$LANG&amp;action=register&amp;page=register&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_menu_newuser'}</a>&nbsp;<a href="/cgi-bin/about.pl?lang=$LANG&amp;page=about&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'label_about'}</a>&nbsp;<a href="/cgi-bin/recordz.cgi?lang=$LANG&amp;page=tarifs&amp;session=$SESSIONID&u=$u;" class="menulink">$LABEL{'tarif'}</a></p>
+    <div class="search_box">
+	<form id="search_form" action="/cgi-bin/dosearch.pl?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+	<fieldset>
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="$LANG" />
+		<input type="hidden" name="session" value="$SESSIONID"/>
+		<img src="../images/atb_search.gif" height="15px" width="15px">&nbsp;<label id="search_name_label">$LABEL{'search_name_label'}</label>&nbsp;<input type="text" name="search_name" value="" style="border-radius: 12px;"/>&nbsp;&nbsp;<select name="categories">$OPTIONS{'categories'}</select>
+		<input type="submit" value="Search" />
+	</fieldset>
+	</form>	
+   </div>
+	<div class="list-menu">
+		<ul style="float:left;">
+			$ARTICLE{'main_menu'}
+		</ul>
+	</div>
+	<br/>
+		<div class="centre">
+			<fieldset>
+			   <form name="select_wish">
+				<input type="hidden" name="lang" value="$LANG" />
+				<input type="hidden" name="session" value="$SESSIONID"/>				
+					<div class="rigth_search"><a href="#" class="menulink"  onclick="openFormFirstTime();">$LABEL{'advanced_search'}</a></div>
+				   $LABEL{'wine_country'}&nbsp;$SELECT{'wine_country'}&nbsp;$LABEL{'wine_type'}&nbsp;$SELECT{'wine_type'}<br/>
+					<div class="pagination">$ARTICLE{'index'}</div><br />
+					$ARTICLE{'table'}
+				</form>
+			</fieldset>
+		 </div>
+	</div>
+<div class="form-popup" id="myForm">
+  	<form name="myForm" action="/cgi-bin/search.pl?lang=$LANG&amp;action=dosearchwine&session=$SESSION" class="form-container" name="myForm"ID" method="post">
+		<input type="hidden" name="action" value="dosearchwine">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+  <table>
+<tr>
+ 	<td>$LABEL{'label_country'}</td><td>$SELECT{'country_search'}</td> 
+</tr>	
+<tr>
+ 	$SELECT{'type_de_vin_search'}
+</tr>	
+<tr>
+ 	$SELECT{'fabricant_search'}
+</tr>	
+
+	<td>$LABEL{'price_min'}</td><td><input type="number" step="1" name="price_min"></td><td>$LABEL{'price_max'}</td><td><input type="number" step="1" name="price_max"></td>
+	</tr>
+	<tr>
+	</table>
+	<br/>	<br/>
+	<input type="submit" value="Chercher">&nbsp;<input type="button" onClick="closeForm();" value="Fermer">
+
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="javascript">
+	
+	var skipcycle = false
+
+		function focOnMe(){
+		if(!skipcycle){
+			window.focus();	
+			}
+		popopen =  setTimeout('focOnMe()', 500);
+		}
+
+		function go()
+		{
+			
+			box = document.select_wish.category;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go2()
+		{
+			
+			box = document.select_wish.type_ecran;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+		function go3()
+		{
+			
+			box = document.select_wish.fabricant;
+			destination = box.options[box.selectedIndex].value;
+			if (destination) location.href = destination;
+		}
+
+ 	   function Lvl_P2P(url,closeIt,delay){ //ver1.0 4LevelWebs
+	   	var category_value;
+		var fabricant_value;
+	    var type_ecran_value;
+		var tv_size_min_value;
+		var tv_size_max_value;
+		var price_min_value;
+		var price_max_value;
+		var ram_min_value;
+		var ram_max_value;
+		var hard_drive_min_value;
+		var hard_drive_max_value;
+		var ecran_dimension_min_value;
+		var ecran_dimension_max_value;
+		
+		
+	   		if (document.select_wish.category) {
+				category_box = document.select_wish.category;
+				category_value = category_box.options[category_box.selectedIndex].value;
+			    url = url + '&category=' + category_value; 
+			}
+			if (document.select_wish.ram_min) {
+				ram_min_value = document.select_wish.ram_min.value;				
+				url = url + '&ram_min=' + ram_min_value;
+			}
+			if (document.select_wish.ram_max) {
+				ram_max_value = document.select_wish.ram_max.value;				
+   			    url = url + '&ram_max=' + ram_max_value;
+			}
+			if (document.select_wish.hard_drive_min) {
+				hard_drive_min_value = document.select_wish.hard_drive_min.value;				
+				url = url + '&hard_drive_min=' + hard_drive_min_value;
+			}
+			if (document.select_wish.hard_drive_max) {
+				hard_drive_max_value = document.select_wish.hard_drive_max.value;				
+				url = url + '&hard_drive_max=' + hard_drive_max_value;
+			}
+
+			if (document.select_wish.fabricant) {
+				fabricant_box = document.select_wish.fabricant;
+				fabricant_value = fabricant_box.options[fabricant_box.selectedIndex].value;
+				url = url + '&fabricant=' + fabricant_value;
+			}
+			if (document.select_wish.type_ecran) {
+				type_ecran_box = document.select_wish.type_ecran;
+				type_ecran_value = type_ecran_box.options[type_ecran_box.selectedIndex].value;
+				url = url + '&type_ecran=' + type_ecran_value;
+			}
+			if (document.select_wish.tv_size_min) {
+				tv_size_min_value = document.select_wish.tv_size_min.value;
+				url = url + '&tv_size_min=' + tv_size_min_value;
+			}
+			if (document.select_wish.tv_size_max) {
+				tv_size_max_value = document.select_wish.tv_size_max.value;
+				url = url + '&tv_size_max=' + tv_size_max_value;
+			}
+			if (document.select_wish.price_min) {
+				price_min_value = document.select_wish.price_min.value;
+				url = url + '&price_min=' + price_min_value;				
+			}
+			if (document.select_wish.price_max) {
+				price_max_value = document.select_wish.price_max.value;
+				url = url + '&price_min=' + price_min_value;				
+			}
+			if (document.select_wish.ecran_dimension_min) {
+				ecran_dimension_min_value = document.select_wish.ecran_dimension_min.value;
+				url = url + '&ecran_dimension_min=' + ecran_dimension_min_value;								
+			}
+			if (document.select_wish.ecran_dimension_max) {
+				ecran_dimension_max_value = document.select_wish.ecran_dimension_max.value;
+				url = url + '&ecran_dimension_max=' + ecran_dimension_max_value;								
+			}
+			if (document.select_wish.used) {
+				used_box = document.select_wish.used;
+				used_value = used_box.options[used_box.selectedIndex].value;
+				url = url + '&used=' + used_value;								
+			}
+
+	       if (category_value != '') {
+				opener.location.href = url;
+			}else {
+			alert ('Veuillez choisir une catégorie');
+			}
+			
+	}
+	</script>
+
+</head>
+<body onload =" popopen =  setTimeout('focOnMe()', 500);">
+<br/>
+	<form name="select_wish" action="/cgi-bin/recordz.cgi?lang=$LANG&amp;action=search&session=$SESSIONID" method="post">
+		<input type="hidden" name="action" value="dosearchimmo">
+		<input type="hidden" name="lang" value="$LANG">
+		<input type="hidden" name="session" value="$SESSIONID"/>
+	<table>
+	<tr>
+		$ARTICLE{'category'}
+		$ARTICLE{'fabricant'}
+		$ARTICLE{'pc_properties'}
+	</tr>	
+
+	<tr>
+	</tr>
+
+	</tr>
+	</table>
+	<br/>	<br/>	<br/>	<br/>	<br/>
+	<input type="button"  onClick="Lvl_P2P('/cgi-bin/recordz.cgi?lang=$LANG&session=$SESSIONID&action=dosearchinfo',true,0500)" value="Chercher">&nbsp;<input type="button" onClick="window.close();" value="Fermer">
+	</form>
+</body>
+</html>

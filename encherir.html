@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <title><!-- Insert your title here --></title>
+</head>
+<body>
+    <form action="/cgi-bin/recordz.cgi?lang=$LANG&action=enchere" method="post">
+        <input type="hidden" name="article" value="$ARTICLE{'id_article'}"></input>
+        <input type="hidden" name="lang" value="$LANG"></input>
+        <input type="hidden" name="action" value="enchere"></input>
+        <table>
+            <tr>
+                <td><label>$LABEL{'last_enchere_label'}</label></td><td><input type="text" disabled value="$ARTICLE{'last_enchere'}"></input></td>
+            </tr>
+            <tr>
+                <td><label>$LABEL{'encherir_a'}</label></td><td><input type="text" name="enchereprice" value=""></input></td>
+            </tr>
+            <tr>
+                <td><label>$LABEL{'username_label'}</label></td><td><input type="text" name="username" value=""></input></td>
+            </tr>            
+            <tr>
+                <td><label>$LABEL{'password'}</label></td><td><input type="password" name="password" value=""></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Encherir"></input></td><td><input type="button" onClick="window.close();" value="Fermer"></td>
+            </tr>
+        </table>
+    </form>        
+</body>
+</html>
+
